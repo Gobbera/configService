@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Config-Service</title>
+</head>
+<body>
+    <div style="background-color: orange;">
+        <h1>Bem vindo ao Config Service</h1>
+        <h3>Preencha os campos abaixo para configurar seu Template Web</h3>
+        <div style="background-color: aqua;">
+            <h1>Configurações Gerais</h1>
+        </div>
+        <div style="background-color: brown;">
+            <label for="">Corporate Name</label>
+            <input type="text" id="corpName" name=""><br>
+            <label for="">Base URL</label>
+            <input type="text" id="baseURL" name=""><br>
+            <label for="">URL</label>
+            <input type="text" id="url" name=""><br>
+            <label for="">URL_FS</label>
+            <input type="text" id="url_fs" name=""><br>
+            <label for="">Language</label>
+            <select name="" id="language">
+              <option value="PTBR">PTBR</option>
+              <option value="ENUS">ENUS</option>
+              <option value="ESES">ESES</option>
+            </select><br>
+            <label for="">Layout</label>
+            <input type="radio" name="layout" id="layout-default" value="layout-default">
+            <input type="radio" name="layout" id="layout1" value="layout1">
+            <input type="radio" name="layout" id="layout2" value="layout2">
+            <input type="radio" name="layout" id="layout3" value="layout3">
+        </div>
+        <input type="button" id="generatorBtn" value="Gerar Arquivo">
+        <div style="background-color: coral;">
+            <p class="output" id="output"></p>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
