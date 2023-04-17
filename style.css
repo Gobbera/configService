@@ -1,0 +1,9 @@
+.output {
+    color: rgb(128, 255, 187);
+    font-family: Cascadia Code;
+    margin: 4px;
+}
+
+.true {
+    color: rgb(255, 98, 140);
+}

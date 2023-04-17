@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Config-Service</title>
 </head>
 <body>
@@ -77,9 +78,96 @@
                     <input type="radio" name="model" id="model4" value="model4">
                 </div>
             </div>
+            <h2 style="background-color: blueviolet;">Top Bar</h2>
+            <div style="display: flex;">
+                <div>
+                    <img src="" alt="" width="245px" height="160px"><br>
+                    <label for="topBarEnable">Enable</label>
+                    <input type="radio" name="topBar" id="topBarEnable" value="true">
+                </div>
+                <div>
+                    <img src="" alt="" width="245px" height="160px"><br>
+                    <label for="topBarDisable">Disable</label>
+                    <input type="radio" name="topBar" id="topBarDisable" value="false">
+                </div>
+            </div>
+            <h2 style="background-color: blueviolet;">Operator</h2>
+            <div style="display: flex;">
+                <div>
+                    <img src="" alt="" width="245px" height="160px"><br>
+                    <label for="operatorEnable">Enable</label>
+                    <input type="radio" name="operator" id="operatorEnable" value="true">
+                </div>
+                <div>
+                    <img src="" alt="" width="245px" height="160px"><br>
+                    <label for="operatorDisable">Disable</label>
+                    <input type="radio" name="operator" id="operatorDisable" value="false">
+                </div>
+                <div>
+                    <label for="">URL da Imagem</label>
+                    <input type="text" id="operatorImg" name=""><br>
+                </div>
+            </div>
+                <h2 style="background-color: blueviolet;">Customer</h2>
+                <div style="display: flex;">
+                <div>
+                    <img src="" alt="" width="245px" height="160px"><br>
+                    <label for="customerEnable">Enable</label>
+                    <input type="radio" name="customer" id="customerEnable" value="true">
+                </div>
+                <div>
+                    <img src="" alt="" width="245px" height="160px"><br>
+                    <label for="customerDisable">Disable</label>
+                    <input type="radio" name="customer" id="customerDisable" value="false">
+                </div>
+                <div>
+                    <label for="">URL da Imagem</label>
+                    <input type="text" id="customerImg" name=""><br>
+            </div>
+            </div>
+                <h2 style="background-color: blueviolet;">Logo</h2>
+                <div style="display: flex;">
+                <div>
+                    <img src="" alt="" width="245px" height="160px"><br>
+                    <label for="logoEnable">Enable</label>
+                    <input type="radio" name="logo" id="logoEnable" value="true">
+                </div>
+                <div>
+                    <img src="" alt="" width="245px" height="160px"><br>
+                    <label for="logoDisable">Disable</label>
+                    <input type="radio" name="logo" id="logoDisable" value="false">
+                </div>
+                <div>
+                    <label for="">URL da Imagem</label>
+                    <input type="text" id="logoImg" name=""><br>
+            </div>
         </div>
+            <h2 style="background-color: blueviolet;">Logo</h2>
+            <div>
+                <label for="">NEW_CHAT_SESSION</label>
+                <input type="text" id="ncsBackground" name=""><br>
+                <label for="">CHAT</label>
+                <input type="text" id="chatBackground" name=""><br>
+                <label for="">CALL_ENDED</label>
+                <input type="text" id="callEndedBackground" name=""><br>
+                <label for="">NO_ATTENDANT</label>
+                <input type="text" id="noAttendantBackground" name=""><br>
+                <label for="">NOT_FOUND</label>
+                <input type="text" id="notFoundBackground" name=""><br>
+                <label for="">RECONNECT</label>
+                <input type="text" id="reconnectBackground" name=""><br>
+                <label for="">QUEUE</label>
+                <input type="text" id="queueBackground" name=""><br>
+            </div>
+            <h2 style="background-color: blueviolet;">Icons</h2>
+            <div>
+                <h1>vou fazer essa parte depois</h1>
+            </div>
+            <h2 style="background-color: blueviolet;">Contact Medias</h2>
+        </div>
+        
         <input type="button" id="generatorBtn" value="Gerar Arquivo">
-        <div style="background-color: coral;">
+        <div style="background-color: rgb(45,43, 85);border: 16px solid rgb(40,40,78);">
             <p class="output" id="output"></p>
         </div>
     </div>
