@@ -7,3 +7,10 @@
 .true {
     color: rgb(255, 98, 140);
 }
+
+.plusBtn {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    font-size: 18pt;
+}
