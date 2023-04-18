@@ -14,6 +14,13 @@ const noAttendantBackground = document.getElementById('noAttendantBackground');
 const notFoundBackground = document.getElementById('notFoundBackground');
 const reconnectBackground = document.getElementById('reconnectBackground');
 const queueBackground = document.getElementById('queueBackground');
+const currentChat = document.getElementById('currentChat');
+const skype = document.getElementById('skype');
+const messenger = document.getElementById('messenger');
+const telegram = document.getElementById('telegram');
+const whatsapp = document.getElementById('whatsapp');
+const appleBusiness = document.getElementById('appleBusiness');
+const email = document.getElementById('email');
 
 
 const generatorBtn = document.getElementById('generatorBtn');
@@ -26,6 +33,13 @@ let definedTopBar;
 let definedOperator;
 let definedCustomer;
 let definedLogo;
+let definedCurrentChat;
+let definedSkype;
+let definedMessenger;
+let definedTelegram;
+let definedWhatsapp;
+let definedAppleBusiness;
+let definedEmail;
 
 function generatorFile() {
     let layoutRadio = document.getElementsByName('layout');
@@ -33,7 +47,14 @@ function generatorFile() {
     let topBarRadio = document.getElementsByName('topBar');
     let operatorRadio = document.getElementsByName('operator');
     let customerRadio = document.getElementsByName('customer');
-    let logoRadio = document.getElementsByName('customer');
+    let logoRadio = document.getElementsByName('logo');
+    let currentChatRadio = document.getElementsByName('currentChat');
+    let skypeRadio = document.getElementsByName('skype');
+    let messengerRadio = document.getElementsByName('messenger');
+    let telegramRadio = document.getElementsByName('telegram');
+    let whatsAppRadio = document.getElementsByName('whatsapp');
+    let appleBusinessRadio = document.getElementsByName('appleBusiness');
+    let emailRadio = document.getElementsByName('email');
 
     for (i = 0; i < layoutRadio.length; i++) {
         if (layoutRadio[i].checked) {
@@ -63,6 +84,41 @@ function generatorFile() {
     for (i = 0; i < logoRadio.length; i++) {
         if (logoRadio[i].checked) {
             definedLogo = `<span class="true">${logoRadio[i].value}</span>`;
+        }
+    }
+    for (i = 0; i < currentChatRadio.length; i++) {
+        if (currentChatRadio[i].checked) {
+            definedCurrentChat = `<span class="true">${currentChatRadio[i].value}</span>`;
+        }
+    }
+    for (i = 0; i < skypeRadio.length; i++) {
+        if (skypeRadio[i].checked) {
+            definedSkype = `<span class="true">${skypeRadio[i].value}</span>`;
+        }
+    }
+    for (i = 0; i < messengerRadio.length; i++) {
+        if (messengerRadio[i].checked) {
+            definedMessenger = `<span class="true">${messengerRadio[i].value}</span>`;
+        }
+    }
+    for (i = 0; i < telegramRadio.length; i++) {
+        if (telegramRadio[i].checked) {
+            definedTelegram = `<span class="true">${telegramRadio[i].value}</span>`;
+        }
+    }
+    for (i = 0; i < whatsAppRadio.length; i++) {
+        if (whatsAppRadio[i].checked) {
+            definedWhatsapp = `<span class="true">${whatsAppRadio[i].value}</span>`;
+        }
+    }
+    for (i = 0; i < appleBusinessRadio.length; i++) {
+        if (appleBusinessRadio[i].checked) {
+            definedAppleBusiness = `<span class="true">${appleBusinessRadio[i].value}</span>`;
+        }
+    }
+    for (i = 0; i < emailRadio.length; i++) {
+        if (emailRadio[i].checked) {
+            definedEmail = `<span class="true">${emailRadio[i].value}</span>`;
         }
     }
 
@@ -132,33 +188,33 @@ function generatorFile() {
         ${tab}${tab}CHATBOT: '',${'<br>'}
         ${tab}},${'<br>'}
         ${tab}CONTACT_MEDIAS: {${'<br>'}
-        ${tab}${tab}ENABLE: ,${'<br>'}
+        ${tab}${tab}ENABLE: ${definedCurrentChat},${'<br>'}
         ${tab}${tab}CURRENT_CHAT: {${'<br>'}
-        ${tab}${tab}${tab}IMAGE_LINK: '',${'<br>'}
+        ${tab}${tab}${tab}IMAGE_LINK: '${currentChat.value}',${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}SKYPE: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ,${'<br>'}
-        ${tab}${tab}${tab}LINK: ''${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${definedSkype},${'<br>'}
+        ${tab}${tab}${tab}LINK: '${skype.value}'${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}MESSENGER: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ,${'<br>'}
-        ${tab}${tab}${tab}LINK: ''${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${definedMessenger},${'<br>'}
+        ${tab}${tab}${tab}LINK: '${messenger.value}'${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}TELEGRAM: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ,${'<br>'}
-        ${tab}${tab}${tab}LINK: ''${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${definedTelegram},${'<br>'}
+        ${tab}${tab}${tab}LINK: '${telegram.value}'${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}WHATSAPP: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ,${'<br>'}
-        ${tab}${tab}${tab}LINK: ''${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${definedWhatsapp},${'<br>'}
+        ${tab}${tab}${tab}LINK: '${whatsapp.value}'${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}APPLE_BUSINESS: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ,${'<br>'}
-        ${tab}${tab}${tab}LINK: ''${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${definedAppleBusiness},${'<br>'}
+        ${tab}${tab}${tab}LINK: '${appleBusiness.value}'${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}EMAIL: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ,${'<br>'}
-        ${tab}${tab}${tab}LINK: ''${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${definedEmail},${'<br>'}
+        ${tab}${tab}${tab}LINK: '${email.value}'${'<br>'}
         ${tab}${tab}}${'<br>'}
         ${tab}},${'<br>'}
         ${tab}COMBOBOX_EMAIL_SUBJECT:[{${'<br>'}
