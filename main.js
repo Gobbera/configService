@@ -55,11 +55,18 @@ function generatorFile() {
     let whatsAppRadio = document.getElementsByName('whatsapp');
     let appleBusinessRadio = document.getElementsByName('appleBusiness');
     let emailRadio = document.getElementsByName('email');
+    let emailTopics = document.getElementById('combobox-email-container');
+    let topics = emailTopics.children.length;
+    let emailTopic = [];
     //<debug>
     debugger;
     //</debug>
-    let emailTopics = document.getElementsById('combobox-email-container');
 
+    while (emailTopic.length < (topics)) {
+        emailTopic.push(`{${'<br>'}
+        ${tab}${tab}PLACE: '${emailTopics.children[emailTopic.length || 0].children[1].value}'${'<br>'}
+        ${tab}}`);
+    }
 
     for (i = 0; i < layoutRadio.length; i++) {
         if (layoutRadio[i].checked) {
@@ -222,17 +229,7 @@ function generatorFile() {
         ${tab}${tab}${tab}LINK: '${email.value}'${'<br>'}
         ${tab}${tab}}${'<br>'}
         ${tab}},${'<br>'}
-        ${tab}COMBOBOX_EMAIL_SUBJECT:[{${'<br>'}
-        ${tab}${tab}PLACE: ''${'<br>'}
-        ${tab}}, {${'<br>'}
-        ${tab}${tab}PLACE: ''${'<br>'}
-        ${tab}}, {${'<br>'}
-        ${tab}${tab}PLACE: ''${'<br>'}
-        ${tab}}, {${'<br>'}
-        ${tab}${tab}PLACE: ''${'<br>'}
-        ${tab}}, {${'<br>'}
-        ${tab}${tab}PLACE: ''${'<br>'}
-        ${tab}}],${'<br>'}
+        ${tab}COMBOBOX_EMAIL_SUBJECT:[${emailTopic}],${'<br>'}
         }`;
 }
 generatorBtn.addEventListener('click', generatorFile);

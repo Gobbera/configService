@@ -20,7 +20,7 @@ function addNewField() {
     <input type="text" id="email" name="">
     <button onclick="removeField()" id="removeField${id}" class="plusBtn">-</button>
     </div>`;
-    comboboxEmailContainer.insertAdjacentHTML('afterbegin', newField);
+    comboboxEmailContainer.insertAdjacentHTML('beforeend', newField);
 }
 function removeField() {
     const me = this;
