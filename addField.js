@@ -2,7 +2,7 @@ const comboboxEmailContainer = document.getElementById('combobox-email-container
 let id = 0;
 let newField = `<div id="fieldContainer${id}">
 <label for="">Assunto</label>
-<input type="text" id="email" name="">
+<input type="text" id="subject" name="">
 <button onclick="removeField()" id="removeField${id}" class="plusBtn">-</button>
 </div>`;
 let addFieldBtn = document.getElementById('addFieldBtn');
@@ -17,7 +17,7 @@ function addNewField() {
     }
     let newField = `<div id="fieldContainer${id}">
     <label for="">Assunto</label>
-    <input type="text" id="email" name="">
+    <input type="text" id="subject${id}" name="">
     <button onclick="removeField()" id="removeField${id}" class="plusBtn">-</button>
     </div>`;
     comboboxEmailContainer.insertAdjacentHTML('beforeend', newField);

@@ -21,6 +21,9 @@ const telegram = document.getElementById('telegram');
 const whatsapp = document.getElementById('whatsapp');
 const appleBusiness = document.getElementById('appleBusiness');
 const email = document.getElementById('email');
+const animationType = document.getElementById('type');
+const animationDuration = document.getElementById('duration');
+const animationDirection = document.getElementById('direction');
 
 
 const generatorBtn = document.getElementById('generatorBtn');
@@ -55,6 +58,9 @@ function generatorFile() {
     let whatsAppRadio = document.getElementsByName('whatsapp');
     let appleBusinessRadio = document.getElementsByName('appleBusiness');
     let emailRadio = document.getElementsByName('email');
+    let animationRadio = document.getElementsByName('animationRadio');
+    
+    
     let emailTopics = document.getElementById('combobox-email-container');
     let topics = emailTopics.children.length;
     let emailTopic = [];
@@ -178,11 +184,15 @@ function generatorFile() {
         ${tab}${tab}EMAIL: {${'<br>'}
         ${tab}${tab}${tab}ENABLE: ${enableItem(emailRadio)},${'<br>'}
         ${tab}${tab}${tab}LINK: '${email.value}'${'<br>'}
-        ${tab}${tab}
-    }${'<br>'}
-        ${tab}
-},${'<br>'}
-        ${tab}COMBOBOX_EMAIL_SUBJECT: [${emailTopic}],${'<br>'}
+        ${tab}${tab}}${'<br>'}
+        ${tab}},${'<br>'}
+        ${tab}COMBOBOX_EMAIL_SUBJECT:[${emailTopic}],${'<br>'}
+        ${tab}ANIMATIONS: {${'<br>'}
+        ${tab}${tab}ENABLE: ,${'<br>'}
+        ${tab}${tab}TYPE: '${animationType.value}',${'<br>'}
+        ${tab}${tab}DURATION: '${animationDuration.value}',${'<br>'}
+        ${tab}${tab}DIRECTION: '${animationDirection.value}',${'<br>'}
+        ${tab}},${'<br>'}
         }`;
 }
 generatorBtn.addEventListener('click', generatorFile);
