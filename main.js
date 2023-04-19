@@ -55,6 +55,11 @@ function generatorFile() {
     let whatsAppRadio = document.getElementsByName('whatsapp');
     let appleBusinessRadio = document.getElementsByName('appleBusiness');
     let emailRadio = document.getElementsByName('email');
+    //<debug>
+    debugger;
+    //</debug>
+    let emailTopics = document.getElementsById('combobox-email-container');
+
 
     for (i = 0; i < layoutRadio.length; i++) {
         if (layoutRadio[i].checked) {
@@ -68,7 +73,7 @@ function generatorFile() {
     }
     for (i = 0; i < topBarRadio.length; i++) {
         if (topBarRadio[i].checked) {
-            definedTopBar =  `<span class="true">${topBarRadio[i].value}</span>`;
+            definedTopBar = `<span class="true">${topBarRadio[i].value}</span>`;
         }
     }
     for (i = 0; i < operatorRadio.length; i++) {
