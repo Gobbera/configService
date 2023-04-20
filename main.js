@@ -58,9 +58,8 @@ function generatorFile() {
     let whatsAppRadio = document.getElementsByName('whatsapp');
     let appleBusinessRadio = document.getElementsByName('appleBusiness');
     let emailRadio = document.getElementsByName('email');
-    let animationRadio = document.getElementsByName('animationRadio');
-    
-    
+    let animationRadio = document.getElementsByName('animation');
+
     let emailTopics = document.getElementById('combobox-email-container');
     let topics = emailTopics.children.length;
     let emailTopic = [];
@@ -188,7 +187,7 @@ function generatorFile() {
         ${tab}},${'<br>'}
         ${tab}COMBOBOX_EMAIL_SUBJECT:[${emailTopic}],${'<br>'}
         ${tab}ANIMATIONS: {${'<br>'}
-        ${tab}${tab}ENABLE: ,${'<br>'}
+        ${tab}${tab}ENABLE: ${enableItem(animationRadio)},${'<br>'}
         ${tab}${tab}TYPE: '${animationType.value}',${'<br>'}
         ${tab}${tab}DURATION: '${animationDuration.value}',${'<br>'}
         ${tab}${tab}DIRECTION: '${animationDirection.value}',${'<br>'}
