@@ -83,7 +83,7 @@ function enableField() {
     let definedItem
     for (i = 0; i < fieldRadios.length; i++) {
         if (fieldRadios[i].checked) {
-            definedItem = /* `<span class="true">${ */fieldRadios[i].value/* }</span>` */;
+            definedItem = fieldRadios[i].value;
         }
     }
     if (definedItem == 'true') {
