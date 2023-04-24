@@ -37,13 +37,6 @@ let definedTopBar;
 let definedOperator;
 let definedCustomer;
 let definedLogo;
-let definedCurrentChat;
-let definedSkype;
-let definedMessenger;
-let definedTelegram;
-let definedWhatsapp;
-let definedAppleBusiness;
-let definedEmail;
 
 function generatorFile() {
     let layoutRadio = document.getElementsByName('layout');
@@ -52,15 +45,19 @@ function generatorFile() {
     let operatorRadio = document.getElementsByName('operator');
     let customerRadio = document.getElementsByName('customer');
     let logoRadio = document.getElementsByName('logo');
-    let currentChatRadio = document.getElementsByName('currentChat');
-    let skypeRadio = document.getElementsByName('skype');
-    let messengerRadio = document.getElementsByName('messenger');
-    let telegramRadio = document.getElementsByName('telegram');
-    let whatsAppRadio = document.getElementsByName('whatsapp');
-    let appleBusinessRadio = document.getElementsByName('appleBusiness');
-    let emailRadio = document.getElementsByName('email');
     let animationRadio = document.getElementsByName('animationRadio');
 
+    
+    let contactMedias = document.getElementById('contactMedias');
+    let skypeEnable = document.getElementById('skypeEnable');
+    let messengerEnable = document.getElementById('messengerEnable');
+    let telegramEnable = document.getElementById('telegramEnable');
+    let whatsAppEnable = document.getElementById('whatsAppEnable');
+    let appleBusinessEnable = document.getElementById('appleBusinessEnable');
+    let emailEnable = document.getElementById('emailEnable');
+    let animationEnable = document.getElementById('animationEnable');
+    
+    
     let emailTopics = document.getElementById('combobox-email-container');
     let topics = emailTopics.children.length;
     let emailTopic = [];
@@ -104,7 +101,7 @@ function generatorFile() {
         return fieldsSessionInfos;
     }
     function enableItem(item) {
-        let definedItem
+        let definedItem;
         for (i = 0; i < item.length; i++) {
             if (item[i].checked) {
                 definedItem = `<span class="true">${item[i].value}</span>`;
@@ -181,39 +178,38 @@ function generatorFile() {
         ${tab}${tab}CHATBOT: '',${'<br>'}
         ${tab}},${'<br>'}
         ${tab}CONTACT_MEDIAS: {${'<br>'}
-        ${tab}${tab}TEST: <span class="true">${enableBtn.value}</span>,${'<br>'}
-        ${tab}${tab}ENABLE: ${enableItem(currentChatRadio)},${'<br>'}
+        ${tab}${tab}ENABLE: ${isChecked(contactMedias)},${'<br>'}
         ${tab}${tab}CURRENT_CHAT: {${'<br>'}
         ${tab}${tab}${tab}IMAGE_LINK: '${currentChat.value}',${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}SKYPE: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ${enableItem(skypeRadio)},${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${isChecked(skypeEnable)},${'<br>'}
         ${tab}${tab}${tab}LINK: '${skype.value}'${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}MESSENGER: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ${enableItem(messengerRadio)},${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${isChecked(messengerEnable)},${'<br>'}
         ${tab}${tab}${tab}LINK: '${messenger.value}'${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}TELEGRAM: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ${enableItem(telegramRadio)},${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${isChecked(telegramEnable)},${'<br>'}
         ${tab}${tab}${tab}LINK: '${telegram.value}'${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}WHATSAPP: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ${enableItem(whatsAppRadio)},${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${isChecked(whatsAppEnable)},${'<br>'}
         ${tab}${tab}${tab}LINK: '${whatsapp.value}'${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}APPLE_BUSINESS: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ${enableItem(appleBusinessRadio)},${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${isChecked(appleBusinessEnable)},${'<br>'}
         ${tab}${tab}${tab}LINK: '${appleBusiness.value}'${'<br>'}
         ${tab}${tab}},${'<br>'}
         ${tab}${tab}EMAIL: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ${enableItem(emailRadio)},${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${isChecked(emailEnable)},${'<br>'}
         ${tab}${tab}${tab}LINK: '${email.value}'${'<br>'}
         ${tab}${tab}}${'<br>'}
         ${tab}},${'<br>'}
         ${tab}COMBOBOX_EMAIL_SUBJECT:[${emailTopic}],${'<br>'}
         ${tab}ANIMATIONS: {${'<br>'}
-        ${tab}${tab}ENABLE: ${enableItem(animationRadio)},${'<br>'}
+        ${tab}${tab}ENABLE: ${isChecked(animationEnable)},${'<br>'}
         ${tab}${tab}TYPE: '${animationType.value}',${'<br>'}
         ${tab}${tab}DURATION: '${animationDuration.value}',${'<br>'}
         ${tab}${tab}DIRECTION: '${animationDirection.value}',${'<br>'}
@@ -224,18 +220,27 @@ function generatorFile() {
 }
 generatorBtn.addEventListener('click', generatorFile);
 
-const enableBtn = document.getElementById('enableBtn');
-const contactMediaText = document.getElementById('contactMediaText');
-function isChecked() {
-    if (enableBtn.checked) {
-        contactMediaText.classList.remove("disable");
-        contactMediaText.textContent = 'Enable';
-        enableBtn.value = 'true';
 
+let contactMediaText = document.getElementById('contactMediaText');
+
+function isChecked(item) {
+    if(item.checked) {
+        item.value = 'true';
     }
     else {
-        contactMediaText.classList.add("disable");
-        contactMediaText.textContent = "Disable";
-        enableBtn.value = 'false'
+        item.value = 'false';
     }
+    return `<span class="true">${item.value}</span>`;
+}
+
+function changeStatus(id, item) {
+    if (item.checked) {
+        id.classList.remove("disable");
+        id.textContent = 'Enable';
+    }
+    else {    
+        id.classList.add("disable");
+        id.textContent = "Disable";
+    }
+
 }

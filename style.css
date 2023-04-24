@@ -21,7 +21,8 @@ header {
 }
 
 .title {
-    background-color: rgb(243, 243, 243);
+    color: white;
+    background-color: rgb(158, 158, 158);
     padding: 16px;
 }
 .section {
@@ -31,6 +32,11 @@ header {
 .section-title {
     background-color: rgb(243, 243, 243);
     padding: 16px;
+}
+
+.sub-section {
+    background-color: rgb(89, 148, 162);
+    padding: 4px;
 }
 
 .output {

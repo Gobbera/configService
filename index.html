@@ -168,129 +168,110 @@
                 <h1>vou fazer essa parte depois</h1>
             </div>
             <h2 class="section-title">Contact Medias</h2>
-            <h3 style="background-color: rgb(85, 1, 57);">Current Chat</h3>
+            <h3 class="sub-section">Current Chat</h3>
             <div class="section">
                 <div>
                     <label class="enable" id="contactMediaText">Enable</label><br>
                 </div>
-                <input type="checkbox" id="enableBtn" checked onclick="isChecked();" value="true">
-                <label for="enableBtn" class="enableBtn"></label>
+                <input type="checkbox" id="contactMedias" checked 
+                onclick="changeStatus(contactMediaText, contactMedias);"value="true">
+                <label for="contactMedias" class="enableBtn"></label>
                 <div>
-                    <label for="currentChatEnable">Enable</label>
-                    <input type="radio" name="currentChat" id="currentChatEnable" value="true">
-                </div>
-                <div>
-                    <label for="currentChatDisable">Disable</label>
-                    <input type="radio" name="currentChat" id="currentChatDisable" value="false">
-                </div>
-                <div>
-                    <label for="">Link</label>
+                    <label for="">Image Link</label>
                     <input class="input-text" type="text" id="currentChat" name=""><br>
                 </div>
             </div>
-            <h3 style="background-color: rgb(85, 1, 57);">Skype</h3>
+            <h3 class="sub-section">Skype</h3>
             <div class="section">
                 <div>
-                    <label for="skypeEnable">Enable</label>
-                    <input type="radio" name="skype" id="skypeEnable" value="true">
+                    <label class="enable" id="skypeEnableText">Enable</label><br>
                 </div>
-                <div>
-                    <label for="skypeDisable">Disable</label>
-                    <input type="radio" name="skype" id="skypeDisable" value="false">
-                </div>
+                <input type="checkbox" id="skypeEnable" checked 
+                onclick="changeStatus(skypeEnableText, skypeEnable);" value="true">
+                <label for="skypeEnable" class="enableBtn"></label>
                 <div>
                     <label for="">Link</label>
                     <input class="input-text" type="text" id="skype" name=""><br>
                 </div>
             </div>
-            <h3 style="background-color: rgb(85, 1, 57);">Messenger</h3>
+            <h3 class="sub-section">Messenger</h3>
             <div class="section">
                 <div>
-                    <label for="messengerEnable">Enable</label>
-                    <input type="radio" name="messenger" id="messengerEnable" value="true">
+                    <label class="enable" id="messengerEnableText">Enable</label><br>
                 </div>
-                <div>
-                    <label for="messengerDisable">Disable</label>
-                    <input type="radio" name="messenger" id="messengerDisable" value="false">
-                </div>
+                <input type="checkbox" id="messengerEnable" checked 
+                onclick="changeStatus(messengerEnableText, messengerEnable);" value="true">
+                <label for="messengerEnable" class="enableBtn"></label>
                 <div>
                     <label for="">Link</label>
                     <input class="input-text" type="text" id="messenger" name=""><br>
                 </div>
             </div>
-            <h3 style="background-color: rgb(85, 1, 57);">Telegram</h3>
+            <h3 class="sub-section">Telegram</h3>
             <div class="section">
                 <div>
-                    <label for="telegramEnable">Enable</label>
-                    <input type="radio" name="telegram" id="telegramEnable" value="true">
+                    <label class="enable" id="telegramEnableText">Enable</label><br>
                 </div>
-                <div>
-                    <label for="telegramDisable">Disable</label>
-                    <input type="radio" name="telegram" id="telegramDisable" value="false">
-                </div>
+                <input type="checkbox" id="telegramEnable" checked
+                onclick="changeStatus(telegramEnableText, telegramEnable);" value="true">
+                <label for="telegramEnable" class="enableBtn"></label>
                 <div>
                     <label for="">Link</label>
                     <input class="input-text" type="text" id="telegram" name=""><br>
                 </div>
             </div>
-            <h3 style="background-color: rgb(85, 1, 57);">WhatsApp</h3>
+            <h3 class="sub-section">WhatsApp</h3>
             <div class="section">
                 <div>
-                    <label for="whatsappEnable">Enable</label>
-                    <input type="radio" name="whatsapp" id="whatsappEnable" value="true">
+                    <label class="enable" id="whatsappEnableText">Enable</label><br>
                 </div>
-                <div>
-                    <label for="whatsappDisable">Disable</label>
-                    <input type="radio" name="whatsapp" id="whatsappDisable" value="false">
-                </div>
+                <input type="checkbox" id="whatsAppEnable" checked
+                onclick="changeStatus(whatsappEnableText, whatsAppEnable);" value="true">
+                <label for="whatsAppEnable" class="enableBtn"></label>
                 <div>
                     <label for="">Link</label>
                     <input class="input-text" type="text" id="whatsapp" name=""><br>
                 </div>
             </div>
-            <h3 style="background-color: rgb(85, 1, 57);">Apple Business</h3>
+            <h3 class="sub-section">Apple Business</h3>
             <div class="section">
                 <div>
-                    <label for="appleBusinessEnable">Enable</label>
-                    <input type="radio" name="appleBusiness" id="appleBusinessEnable" value="true">
+                    <label class="enable" id="appleBusinessEnableText">Enable</label><br>
                 </div>
-                <div>
-                    <label for="appleBusinessDisable">Disable</label>
-                    <input type="radio" name="appleBusiness" id="appleBusinessDisable" value="false">
-                </div>
+                <input type="checkbox" id="appleBusinessEnable" checked
+                onclick="changeStatus(appleBusinessEnableText, appleBusinessEnable);" value="true">
+                <label for="appleBusinessEnable" class="enableBtn"></label>
                 <div>
                     <label for="">Link</label>
                     <input class="input-text" type="text" id="appleBusiness" name=""><br>
                 </div>
             </div>
-            <h3 style="background-color: rgb(85, 1, 57);">Email</h3>
+            <h3 class="sub-section">Email</h3>
             <div class="section">
                 <div>
-                    <label for="emailEnable">Enable</label>
-                    <input type="radio" name="email" id="emailEnable" value="true">
+                    <label class="enable" id="emailEnableText">Enable</label><br>
                 </div>
-                <div>
-                    <label for="emailDisable">Disable</label>
-                    <input type="radio" name="email" id="emailDisable" value="false">
-                </div>
+                <input type="checkbox" id="emailEnable" checked 
+                onclick="changeStatus(emailEnableText, emailEnable);" value="true">
+                <label for="emailEnable" class="enableBtn"></label>
                 <div>
                     <label for="">Link</label>
                     <input class="input-text" type="text" id="email" name=""><br>
                 </div>
             </div>
-            <h2 class="section-title"">ComboBox Email</h2>
+            <h2 class="section-title"s>ComboBox Email</h2>
             <div id="combobox-email-container">
             </div>
             <input class="plusBtn" type="button" id="addFieldBtn" value="+">
             <h2 class="section-title">Animations</h2>
             <div class="section">
                 <div>
-                    <label for="animationEnable">Enable</label>
-                    <input type="radio" name="animation" id="animationEnable" value="true">
+                    <label class="enable" id="animationEnableText">Enable</label><br>
                 </div>
+                <input type="checkbox" id="animationEnable" checked
+                onclick="changeStatus(animationEnableText, animationEnable);" value="true">
+                <label for="animationEnable" class="enableBtn"></label>
                 <div>
-                    <label for="animationDisable">Disable</label>
-                    <input type="radio" name="animation" id="animationDisable" value="false"><br>
                     <label for="">Type</label>
                     <select name="type" id="type">
                         <option value="fade">fade</option>
