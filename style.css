@@ -1,3 +1,38 @@
+body, h1 {
+    margin: 0px;
+    padding: 0px;
+}
+header {
+    margin: 0px;
+    padding: 16px;
+    height: 48px;
+    background-color: rgb(93, 109, 125);
+    color: white;
+}
+
+.background {
+    background-color: rgb(243, 243, 243);
+    padding: 16px;
+}
+
+.main-container {
+    background-color: rgb(255, 255, 255);
+    padding: 16px;
+}
+
+.title {
+    background-color: rgb(243, 243, 243);
+    padding: 16px;
+}
+.section {
+    display: flex;
+}
+
+.section-title {
+    background-color: rgb(243, 243, 243);
+    padding: 16px;
+}
+
 .output {
     color: rgb(128, 255, 187);
     font-family: Cascadia Code;
@@ -13,5 +48,27 @@
     width: 36px;
     border-radius: 50%;
     font-size: 18pt;
-    margin: 16px;
+    margin: 32px;
+    left: 32px;
+    position: relative;
+    border: none;
+}
+.plusBtn:hover {
+    cursor: pointer;
+    background-color: rgb(60, 245, 128);
+    color: white;
+}
+.decreaseBtn {
+    border: none;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    font-size: 18pt;
+    margin: 8px;
+    padding-bottom: 6px;
+}
+.decreaseBtn:hover {
+    cursor: pointer;
+    background-color: rgb(255, 98, 140);
+    color: white;
 }

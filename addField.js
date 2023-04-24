@@ -3,10 +3,10 @@ const sessionInfoContainer = document.getElementById('session-info-container');
 let id = 0;
 let sessionId = 0;
 let newSessionFieldId = 0;
-let newField = `<div id="fieldContainer${id}">
+let newField = `<div class="subject-field" id="fieldContainer${id}">
 <label for="">Assunto</label>
 <input type="text" id="subject" name="">
-<button onclick="removeField()" id="removeField${id}" class="plusBtn">-</button>
+<button onclick="removeField()" id="removeField${id}" class="decreaseBtn">-</button>
 </div>`;
 let newSessionFields = `<div id="fieldContainer${sessionId}">
 <label for="">Chat field</label>
@@ -25,10 +25,10 @@ function addNewField() {
         alert('O limite de assuntos foi atingido');
         return;
     }
-    let newField = `<div id="fieldContainer${id}">
-    <label for="">Assunto</label>
+    let newField = `<div class="subject-field" id="fieldContainer${id}">
+    <label for="">Assunto ${id}</label>
     <input type="text" id="subject${id}" name="">
-    <button onclick="removeField()" id="removeField${id}" class="plusBtn">-</button>
+    <button onclick="removeField()" id="removeField${id}" class="decreaseBtn">-</button>
     </div>`;
     comboboxEmailContainer.insertAdjacentHTML('beforeend', newField);
 }

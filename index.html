@@ -6,36 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="item.css">
     <title>Config-Service</title>
 </head>
 
 <body>
-    <div style="background-color: orange;">
+    <header>
         <h1>Bem vindo ao Config Service</h1>
-        <h3>Preencha os campos abaixo para configurar seu Template Web</h3>
-        <div style="background-color: aqua;">
-            <h1>Configurações Gerais</h1>
-        </div>
-        <div style="background-color: brown;">
-            <label for="">Corporate Name</label>
-            <input type="text" id="corpName" name=""><br>
-            <label for="">Base URL</label>
-            <input type="text" id="baseURL" name=""><br>
-            <label for="">URL</label>
-            <input type="text" id="url" name=""><br>
-            <label for="">URL_FS</label>
-            <input type="text" id="url_fs" name=""><br>
+    </header>
+    <div class="background">
+        <div class="main-container">
+            <div class="title">
+                <h1>Configurações Gerais</h1>
+            </div>
+            <label for="">Corporate Name</label><br>
+            <input class="input-text" type="text" id="corpName" name=""><br>
+            <label for="">Base URL</label><br>
+            <input class="input-text" type="text" id="baseURL" name=""><br>
+            <label for="">URL</label><br>
+            <input class="input-text" type="text" id="url" name=""><br>
+            <label for="">URL_FS</label><br>
+            <input class="input-text" type="text" id="url_fs" name=""><br>
             <label for="">Language</label>
             <select name="" id="language">
                 <option value="PTBR">PTBR</option>
                 <option value="ENUS">ENUS</option>
                 <option value="ESES">ESES</option>
             </select><br>
-            <div style="background-color: aqua;">
+            <div class="title">
                 <h1>Configurações Visuais</h1>
             </div>
-            <h2 style="background-color: blueviolet;">Chat Layout</h2>
-            <div style="display: flex;">
+            <h2 class="section-title">Chat Layout</h2>
+            <div class="section select-config">
                 <div>
                     <img src="" alt="" width="200px" height="245px"><br>
                     <label for="layout-default">Layout-default</label>
@@ -57,8 +59,8 @@
                     <input type="radio" name="layout" id="layout3" value="layout3">
                 </div>
             </div>
-            <h2 style="background-color: blueviolet;">Balao de mensagem</h2>
-            <div style="display: flex;">
+            <h2 class="section-title">Balao de mensagem</h2>
+            <div class="section select-config">
                 <div>
                     <img src="" alt="" width="245px" height="160px"><br>
                     <label for="model1">modelo1</label>
@@ -80,8 +82,8 @@
                     <input type="radio" name="model" id="model4" value="model4">
                 </div>
             </div>
-            <h2 style="background-color: blueviolet;">Top Bar</h2>
-            <div style="display: flex;">
+            <h2 class="section-title">Top Bar</h2>
+            <div class="section select-config">
                 <div>
                     <img src="" alt="" width="245px" height="160px"><br>
                     <label for="topBarEnable">Enable</label>
@@ -93,8 +95,8 @@
                     <input type="radio" name="topBar" id="topBarDisable" value="false">
                 </div>
             </div>
-            <h2 style="background-color: blueviolet;">Operator</h2>
-            <div style="display: flex;">
+            <h2 class="section-title">Operator</h2>
+            <div class="section">
                 <div>
                     <img src="" alt="" width="245px" height="160px"><br>
                     <label for="operatorEnable">Enable</label>
@@ -107,11 +109,11 @@
                 </div>
                 <div>
                     <label for="">URL da Imagem</label>
-                    <input type="text" id="operatorImg" name=""><br>
+                    <input class="input-text" type="text" id="operatorImg" name=""><br>
                 </div>
             </div>
-            <h2 style="background-color: blueviolet;">Customer</h2>
-            <div style="display: flex;">
+            <h2 class="section-title">Customer</h2>
+            <div class="section">
                 <div>
                     <img src="" alt="" width="245px" height="160px"><br>
                     <label for="customerEnable">Enable</label>
@@ -124,11 +126,11 @@
                 </div>
                 <div>
                     <label for="">URL da Imagem</label>
-                    <input type="text" id="customerImg" name=""><br>
+                    <input class="input-text" type="text" id="customerImg" name=""><br>
                 </div>
             </div>
-            <h2 style="background-color: blueviolet;">Logo</h2>
-            <div style="display: flex;">
+            <h2 class="section-title">Logo</h2>
+            <div class="section">
                 <div>
                     <img src="" alt="" width="245px" height="160px"><br>
                     <label for="logoEnable">Enable</label>
@@ -141,33 +143,38 @@
                 </div>
                 <div>
                     <label for="">URL da Imagem</label>
-                    <input type="text" id="logoImg" name=""><br>
+                    <input class="input-text" type="text" id="logoImg" name=""><br>
                 </div>
             </div>
-            <h2 style="background-color: blueviolet;">Background Images</h2>
+            <h2 class="section-title">Background Images</h2>
             <div>
-                <label for="">NEW_CHAT_SESSION</label>
-                <input type="text" id="ncsBackground" name=""><br>
-                <label for="">CHAT</label>
-                <input type="text" id="chatBackground" name=""><br>
-                <label for="">CALL_ENDED</label>
-                <input type="text" id="callEndedBackground" name=""><br>
-                <label for="">NO_ATTENDANT</label>
-                <input type="text" id="noAttendantBackground" name=""><br>
-                <label for="">NOT_FOUND</label>
-                <input type="text" id="notFoundBackground" name=""><br>
-                <label for="">RECONNECT</label>
-                <input type="text" id="reconnectBackground" name=""><br>
-                <label for="">QUEUE</label>
-                <input type="text" id="queueBackground" name=""><br>
+                <label for="">NEW_CHAT_SESSION</label><br>
+                <input class="input-text" type="text" id="ncsBackground" name=""><br>
+                <label for="">CHAT</label><br>
+                <input class="input-text" type="text" id="chatBackground" name=""><br>
+                <label for="">CALL_ENDED</label><br>
+                <input class="input-text" type="text" id="callEndedBackground" name=""><br>
+                <label for="">NO_ATTENDANT</label><br>
+                <input class="input-text" type="text" id="noAttendantBackground" name=""><br>
+                <label for="">NOT_FOUND</label><br>
+                <input class="input-text" type="text" id="notFoundBackground" name=""><br>
+                <label for="">RECONNECT</label><br>
+                <input class="input-text" type="text" id="reconnectBackground" name=""><br>
+                <label for="">QUEUE</label><br>
+                <input class="input-text" type="text" id="queueBackground" name=""><br>
             </div>
-            <h2 style="background-color: blueviolet;">Icons</h2>
+            <h2 class="section-title">Icons</h2>
             <div>
                 <h1>vou fazer essa parte depois</h1>
             </div>
-            <h2 style="background-color: blueviolet;">Contact Medias</h2>
+            <h2 class="section-title">Contact Medias</h2>
             <h3 style="background-color: rgb(85, 1, 57);">Current Chat</h3>
-            <div style="display: flex;">
+            <div class="section">
+                <div>
+                    <label class="enable" id="contactMediaText">Enable</label><br>
+                </div>
+                <input type="checkbox" id="enableBtn" checked onclick="isChecked();" value="true">
+                <label for="enableBtn" class="enableBtn"></label>
                 <div>
                     <label for="currentChatEnable">Enable</label>
                     <input type="radio" name="currentChat" id="currentChatEnable" value="true">
@@ -178,11 +185,11 @@
                 </div>
                 <div>
                     <label for="">Link</label>
-                    <input type="text" id="currentChat" name=""><br>
+                    <input class="input-text" type="text" id="currentChat" name=""><br>
                 </div>
             </div>
             <h3 style="background-color: rgb(85, 1, 57);">Skype</h3>
-            <div style="display: flex;">
+            <div class="section">
                 <div>
                     <label for="skypeEnable">Enable</label>
                     <input type="radio" name="skype" id="skypeEnable" value="true">
@@ -193,11 +200,11 @@
                 </div>
                 <div>
                     <label for="">Link</label>
-                    <input type="text" id="skype" name=""><br>
+                    <input class="input-text" type="text" id="skype" name=""><br>
                 </div>
             </div>
             <h3 style="background-color: rgb(85, 1, 57);">Messenger</h3>
-            <div style="display: flex;">
+            <div class="section">
                 <div>
                     <label for="messengerEnable">Enable</label>
                     <input type="radio" name="messenger" id="messengerEnable" value="true">
@@ -208,11 +215,11 @@
                 </div>
                 <div>
                     <label for="">Link</label>
-                    <input type="text" id="messenger" name=""><br>
+                    <input class="input-text" type="text" id="messenger" name=""><br>
                 </div>
             </div>
             <h3 style="background-color: rgb(85, 1, 57);">Telegram</h3>
-            <div style="display: flex;">
+            <div class="section">
                 <div>
                     <label for="telegramEnable">Enable</label>
                     <input type="radio" name="telegram" id="telegramEnable" value="true">
@@ -223,11 +230,11 @@
                 </div>
                 <div>
                     <label for="">Link</label>
-                    <input type="text" id="telegram" name=""><br>
+                    <input class="input-text" type="text" id="telegram" name=""><br>
                 </div>
             </div>
             <h3 style="background-color: rgb(85, 1, 57);">WhatsApp</h3>
-            <div style="display: flex;">
+            <div class="section">
                 <div>
                     <label for="whatsappEnable">Enable</label>
                     <input type="radio" name="whatsapp" id="whatsappEnable" value="true">
@@ -238,11 +245,11 @@
                 </div>
                 <div>
                     <label for="">Link</label>
-                    <input type="text" id="whatsapp" name=""><br>
+                    <input class="input-text" type="text" id="whatsapp" name=""><br>
                 </div>
             </div>
             <h3 style="background-color: rgb(85, 1, 57);">Apple Business</h3>
-            <div style="display: flex;">
+            <div class="section">
                 <div>
                     <label for="appleBusinessEnable">Enable</label>
                     <input type="radio" name="appleBusiness" id="appleBusinessEnable" value="true">
@@ -253,11 +260,11 @@
                 </div>
                 <div>
                     <label for="">Link</label>
-                    <input type="text" id="appleBusiness" name=""><br>
+                    <input class="input-text" type="text" id="appleBusiness" name=""><br>
                 </div>
             </div>
             <h3 style="background-color: rgb(85, 1, 57);">Email</h3>
-            <div style="display: flex;">
+            <div class="section">
                 <div>
                     <label for="emailEnable">Enable</label>
                     <input type="radio" name="email" id="emailEnable" value="true">
@@ -268,15 +275,15 @@
                 </div>
                 <div>
                     <label for="">Link</label>
-                    <input type="text" id="email" name=""><br>
+                    <input class="input-text" type="text" id="email" name=""><br>
                 </div>
             </div>
-            <h2 style="background-color: blueviolet;">ComboBox Email</h2>
+            <h2 class="section-title"">ComboBox Email</h2>
             <div id="combobox-email-container">
             </div>
             <input class="plusBtn" type="button" id="addFieldBtn" value="+">
-            <h2 style="background-color: blueviolet;">Animations</h2>
-            <div style="display: flex;">
+            <h2 class="section-title">Animations</h2>
+            <div class="section">
                 <div>
                     <label for="animationEnable">Enable</label>
                     <input type="radio" name="animation" id="animationEnable" value="true">
@@ -318,8 +325,9 @@
             <input class="plusBtn" type="button" id="addSessionFields" value="+">
         </div>
     </div>
-
-    <input type="button" id="generatorBtn" value="Gerar Arquivo">
+    <div class="generatorBtn">
+        <input type="button" id="generatorBtn" value="Gerar Arquivo">
+    </div>
     <div style="background-color: rgb(45,43, 85);border: 16px solid rgb(40,40,78);">
         <p class="output" id="output"></p>
     </div>
