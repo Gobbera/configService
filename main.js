@@ -45,7 +45,7 @@ function generatorFile() {
     let operatorRadio = document.getElementsByName('operator');
     let customerRadio = document.getElementsByName('customer');
     let logoRadio = document.getElementsByName('logo');
-    
+
     let contactMedias = document.getElementById('contactMedias');
     let skypeEnable = document.getElementById('skypeEnable');
     let messengerEnable = document.getElementById('messengerEnable');
@@ -54,8 +54,12 @@ function generatorFile() {
     let appleBusinessEnable = document.getElementById('appleBusinessEnable');
     let emailEnable = document.getElementById('emailEnable');
     let animationEnable = document.getElementById('animationEnable');
-    
-    
+
+    let defaultFieldsEnableNAME = document.getElementById('defaultFieldsEnableNAME');
+    let defaultFieldsEnablePHONE = document.getElementById('defaultFieldsEnablePHONE');
+    let defaultFieldsEnableCPF = document.getElementById('defaultFieldsEnableCPF');
+    let defaultFieldsEnableEMAIL = document.getElementById('defaultFieldsEnableEMAIL');
+
     let emailTopics = document.getElementById('combobox-email-container');
     let topics = emailTopics.children.length;
     let emailTopic = [];
@@ -76,7 +80,7 @@ function generatorFile() {
             ${tab}${tab}${tab}selectChat: ${sessionInfoFieldsChildren.children[3].children[1].value},${'<br>'}
             ${tab}${tab}${tab}calltype: ${sessionInfoFieldsChildren.children[3].children[4].value},${'<br>'}
             ${tab}${tab}${tab}language: ${sessionInfoFieldsChildren.children[3].children[7].value}${'<br>'}
-            ${tab}}`)
+            ${tab}${tab}}`)
         }
         if (sessionInfoFieldsChildren.children[3].children[10].style.display !== 'none') {
             sessionInfoFields.push(`${'<br>'}
@@ -85,7 +89,7 @@ function generatorFile() {
             ${tab}${tab}${tab}calltype: ${sessionInfoFieldsChildren.children[3].children[4].value},${'<br>'}
             ${tab}${tab}${tab}language: ${sessionInfoFieldsChildren.children[3].children[7].value}${'<br>'}
             ${tab}${tab}${tab}fields: [${fieldsSessionInfo(sessionInfoFieldsChildren.children[3].children[10].children[0].children)}]${'<br>'}
-            ${tab}}`)
+            ${tab}${tab}}`)
         }
     }
 
@@ -211,16 +215,29 @@ function generatorFile() {
         ${tab}${tab}TYPE: '${animationType.value}',${'<br>'}
         ${tab}${tab}DURATION: '${animationDuration.value}',${'<br>'}
         ${tab}${tab}DIRECTION: '${animationDirection.value}',${'<br>'}
+        ${tab}}, {${'<br>'}
+        ${tab}sessionsInfo: {${sessionInfoFields}${'<br>'}
+        ${tab}},${'<br>'}
+        ${tab}fields:[{${'<br>'}
+        ${tab}${tab}enable: ${isChecked(defaultFieldsEnableNAME)}${'<br>'}
+        ${tab}${tab}input: 'name' ${'<br>'}
         ${tab}}, { ${'<br>'}
-        ${tab}sessionsInfo: {${sessionInfoFields}
-        ${tab}${'<br>'}
+        ${tab}${tab}enable: ${isChecked(defaultFieldsEnablePHONE)}${'<br>'}
+        ${tab}${tab}input: 'phone' ${'<br>'}
+        ${tab}}, {${'<br>'}
+        ${tab}${tab}enable: ${isChecked(defaultFieldsEnableCPF)}${'<br>'} 
+        ${tab}${tab}input: 'CPF' ${'<br>'}
+        ${tab}}, {${'<br>'}
+        ${tab}${tab}enable: ${isChecked(defaultFieldsEnableEMAIL)}${'<br>'} 
+        ${tab}${tab}input: 'email' ${'<br>'}
+        ${tab}}],${'<br>'}
         }`;
 }
 generatorBtn.addEventListener('click', generatorFile);
 
 
 function isChecked(item) {
-    if(item.checked) {
+    if (item.checked) {
         item.value = 'true';
     }
     else {
@@ -234,7 +251,7 @@ function changeStatus(id, item) {
         id.classList.remove("disable");
         id.textContent = 'Enable';
     }
-    else {    
+    else {
         id.classList.add("disable");
         id.textContent = "Disable";
     }
