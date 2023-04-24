@@ -53,7 +53,10 @@ function generatorFile() {
     let whatsAppEnable = document.getElementById('whatsAppEnable');
     let appleBusinessEnable = document.getElementById('appleBusinessEnable');
     let emailEnable = document.getElementById('emailEnable');
-    let animationEnable = document.getElementById('animationEnable');
+    let blankFieldName = document.getElementById('blankFieldName');
+    let blankFieldPhone = document.getElementById('blankFieldPhone');
+    let blankFieldEmail = document.getElementById('blankFieldEmail');
+    let blankFieldCpf = document.getElementById('blankFieldCpf');
 
     let defaultFieldsEnableNAME = document.getElementById('defaultFieldsEnableNAME');
     let defaultFieldsEnablePHONE = document.getElementById('defaultFieldsEnablePHONE');
@@ -231,6 +234,12 @@ function generatorFile() {
         ${tab}${tab}enable: ${isChecked(defaultFieldsEnableEMAIL)}${'<br>'} 
         ${tab}${tab}input: 'email' ${'<br>'}
         ${tab}}],${'<br>'}
+        ${tab}blankField: {${'<br>'}
+        ${tab}${tab}name: ${blankFieldName.value}${'<br>'}
+        ${tab}${tab}phone: ${blankFieldPhone.value}${'<br>'}
+        ${tab}${tab}email: ${blankFieldEmail.value}${'<br>'}
+        ${tab}${tab}cpf: ${blankFieldCpf.value}${'<br>'}
+        ${tab}},${'<br>'}
         }`;
 }
 generatorBtn.addEventListener('click', generatorFile);

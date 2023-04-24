@@ -300,7 +300,7 @@
                     </select><br>
                 </div>
             </div>
-            <h2 style="background-color: blueviolet;">Session Info</h2>
+            <h2 class="section-title">Session Info</h2>
             <div id="session-info-container">
             </div>
             <input class="plusBtn" type="button" id="addSessionFields" value="+">
@@ -342,6 +342,17 @@
                 <input type="checkbox" id="defaultFieldsEnableEMAIL" checked
                     onclick="changeStatus(defaultFieldsEnableTextEMAIL, defaultFieldsEnableEMAIL);" value="true">
                 <label for="defaultFieldsEnableEMAIL" class="enableBtn"></label>
+            </div>
+            <h2 class="section-title">Blank Field</h2>
+            <div id="blank-field">
+                <label for="">NOME</label><br>
+                <input class="input-text" type="text" id="blankFieldName" name=""><br>
+                <label for="">TELEFONE/CELULAR</label><br>
+                <input class="input-text" type="text" id="blankFieldPhone" name=""><br>
+                <label for="">EMAIL</label><br>
+                <input class="input-text" type="text" id="blankFieldEmail" name=""><br>
+                <label for="">CPF</label><br>
+                <input class="input-text" type="text" id="blankFieldCpf" name=""><br>
             </div>
         </div>
     </div>
