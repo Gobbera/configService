@@ -1,6 +1,7 @@
 body, h1 {
     margin: 0px;
     padding: 0px;
+    font-family: sans-serif;
 }
 header {
     margin: 0px;
@@ -24,6 +25,7 @@ header {
     color: white;
     background-color: rgb(158, 158, 158);
     padding: 16px;
+    
 }
 .section {
     display: flex;

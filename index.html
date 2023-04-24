@@ -19,66 +19,92 @@
             <div class="title">
                 <h1>Configurações Gerais</h1>
             </div>
-            <label for="">Corporate Name</label><br>
-            <input class="input-text" type="text" id="corpName" name=""><br>
-            <label for="">Base URL</label><br>
-            <input class="input-text" type="text" id="baseURL" name=""><br>
-            <label for="">URL</label><br>
-            <input class="input-text" type="text" id="url" name=""><br>
-            <label for="">URL_FS</label><br>
-            <input class="input-text" type="text" id="url_fs" name=""><br>
-            <label for="">Language</label>
-            <select name="" id="language">
-                <option value="PTBR">PTBR</option>
-                <option value="ENUS">ENUS</option>
-                <option value="ESES">ESES</option>
-            </select><br>
+            <div class="input-general-configs">
+                <label>Corporate Name</label><br>
+                <input class="input-text" type="text" id="corpName"><br>
+            </div>
+            <div class="input-general-configs">
+                <label>Base URL</label><br>
+                <input class="input-text" type="text" id="baseURL"><br>
+            </div>
+            <div class="input-general-configs">
+                <label>URL</label><br>
+                <input class="input-text" type="text" id="url"><br>
+            </div>
+            <div class="input-general-configs">
+                <label>URL_FS</label><br>
+                <input class="input-text" type="text" id="url_fs"><br>
+            </div>
+            <div class="input-general-configs">
+                <label>Language</label>
+                <select id="language">
+                    <option value="PTBR">PTBR</option>
+                    <option value="ENUS">ENUS</option>
+                    <option value="ESES">ESES</option>
+                </select><br>
+            </div>
             <div class="title">
                 <h1>Configurações Visuais</h1>
             </div>
             <h2 class="section-title">Chat Layout</h2>
             <div class="section select-config">
                 <div>
-                    <img src="" alt="" width="200px" height="245px"><br>
+                    <label for="layout-default">
+                        <img class="layouts-config-container" src="images/layouts/layout-default.png" alt="layout-default.png"><br>
+                    </label>
                     <label for="layout-default">Layout-default</label>
                     <input type="radio" name="layout" id="layout-default" value="layout-default">
                 </div>
                 <div>
-                    <img src="" alt="" width="200px" height="245px"><br>
-                    <label for="layout1">Layout1</label>
+                    <label for="layout1">
+                        <img class="layouts-config-container" src="images/layouts/layout1.png" alt="layout1.png"><br>
+                    </label>
+                    <label for="layout1">Layout 1</label>
                     <input type="radio" name="layout" id="layout1" value="layout1">
                 </div>
                 <div>
-                    <img src="" alt="" width="200px" height="245px"><br>
-                    <label for="layout2">Layout2</label>
+                    <label for="layout2">
+                        <img class="layouts-config-container" src="images/layouts/layout2.png" alt="layout2.png"><br>
+                    </label>
+                    <label for="layout2">Layout 2</label>
                     <input type="radio" name="layout" id="layout2" value="layout2">
                 </div>
                 <div>
-                    <img src="" alt="" width="200px" height="245px"><br>
-                    <label for="layout3">Layout3</label>
+                    <label for="layout3">
+                        <img class="layouts-config-container" src="images/layouts/layout3.png" alt="layout3.png"><br>
+                    </label>
+                    <label for="layout3">Layout 3</label>
                     <input type="radio" name="layout" id="layout3" value="layout3">
                 </div>
             </div>
             <h2 class="section-title">Balao de mensagem</h2>
             <div class="section select-config">
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="model1">modelo1</label>
+                    <label for="model1">
+                        <img class="ballon-config-container" src="images/balloons/balloon1.png" alt="balloon1.png"><br>
+                    </label>
+                    <label for="model1">modelo 1</label>
                     <input type="radio" name="model" id="model1" value="model1">
                 </div>
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="model2">modelo2</label>
+                    <label for="model2">
+                        <img class="ballon-config-container" src="images/balloons/balloon2.png" alt="balloon2.png"><br>
+                    </label>
+                    <label for="model2">modelo 2</label>
                     <input type="radio" name="model" id="model2" value="model2">
                 </div>
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="model3">modelo3</label>
+                    <label for="model3">
+                        <img class="ballon-config-container" src="images/balloons/balloon3.png" alt="balloon3.png"><br>
+                    </label>
+                    <label for="model3">modelo 3</label>
                     <input type="radio" name="model" id="model3" value="model3">
                 </div>
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="model4">modelo4</label>
+                    <label for="model4">
+                        <img class="ballon-config-container" src="images/balloons/balloon4.png" alt="balloon4.png"><br>
+                    </label>
+                    <label for="model4">modelo 4</label>
                     <input type="radio" name="model" id="model4" value="model4">
                 </div>
             </div>
@@ -148,20 +174,34 @@
             </div>
             <h2 class="section-title">Background Images</h2>
             <div>
-                <label for="">NEW_CHAT_SESSION</label><br>
-                <input class="input-text" type="text" id="ncsBackground" name=""><br>
-                <label for="">CHAT</label><br>
-                <input class="input-text" type="text" id="chatBackground" name=""><br>
-                <label for="">CALL_ENDED</label><br>
-                <input class="input-text" type="text" id="callEndedBackground" name=""><br>
-                <label for="">NO_ATTENDANT</label><br>
-                <input class="input-text" type="text" id="noAttendantBackground" name=""><br>
-                <label for="">NOT_FOUND</label><br>
-                <input class="input-text" type="text" id="notFoundBackground" name=""><br>
-                <label for="">RECONNECT</label><br>
-                <input class="input-text" type="text" id="reconnectBackground" name=""><br>
-                <label for="">QUEUE</label><br>
-                <input class="input-text" type="text" id="queueBackground" name=""><br>
+                <div class="input-general-configs">
+                    <label>NEW_CHAT_SESSION</label><br>
+                    <input class="input-text" type="text" id="ncsBackground" name=""><br>
+                </div>
+                <div class="input-general-configs">
+                    <label for="">CHAT</label><br>
+                    <input class="input-text" type="text" id="chatBackground" name=""><br>
+                </div>
+                <div class="input-general-configs">
+                    <label for="">CALL_ENDED</label><br>
+                    <input class="input-text" type="text" id="callEndedBackground" name=""><br>
+                </div>
+                <div class="input-general-configs">
+                    <label for="">NO_ATTENDANT</label><br>
+                    <input class="input-text" type="text" id="noAttendantBackground" name=""><br>
+                </div>
+                <div class="input-general-configs">
+                    <label for="">NOT_FOUND</label><br>
+                    <input class="input-text" type="text" id="notFoundBackground" name=""><br>
+                </div>
+                <div class="input-general-configs">
+                    <label for="">RECONNECT</label><br>
+                    <input class="input-text" type="text" id="reconnectBackground" name=""><br>
+                </div>
+                <div class="input-general-configs">
+                    <label for="">QUEUE</label><br>
+                    <input class="input-text" type="text" id="queueBackground" name=""><br>
+                </div>
             </div>
             <h2 class="section-title">Icons</h2>
             <div>

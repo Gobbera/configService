@@ -1,12 +1,28 @@
 .select-config {
     justify-content: center;
-    gap: 64px;
+    gap: 32px;
 }
 
 .input-text {
     padding: 4px;
     margin: 8px;
     width: 512px;
+}
+
+.input-general-configs {
+    margin: 16px;
+}
+
+.layouts-config-container {
+    width: 280px;
+    height: 329px;
+    cursor: pointer;
+}
+
+.ballon-config-container {
+    width: 245px; 
+    height: 180px;
+    cursor: pointer;
 }
 
 .generatorBtn {
