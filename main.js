@@ -60,23 +60,58 @@ function generatorFile() {
     let appleBusinessRadio = document.getElementsByName('appleBusiness');
     let emailRadio = document.getElementsByName('email');
     let animationRadio = document.getElementsByName('animationRadio');
-    
-    
+
     let emailTopics = document.getElementById('combobox-email-container');
     let topics = emailTopics.children.length;
     let emailTopic = [];
-    while (emailTopic.length < (topics)) {
+    while (emailTopic.length < topics) {
         emailTopic.push(`{${'<br>'}
         ${tab}${tab}PLACE: '${emailTopics.children[emailTopic.length || 0].children[1].value}'${'<br>'}
         ${tab}}`);
     }
 
+    let sessionInfoContainer = document.getElementById('session-info-container');
+    let sessionInfo = sessionInfoContainer.children.length;
+    let sessionInfoFields = [];
+    while (sessionInfoFields.length < sessionInfo) {
+        let sessionInfoFieldsChildren = sessionInfoContainer.children[sessionInfoFields.length || 0];
+        if (sessionInfoFieldsChildren.children[3].children[10].style.display === 'none') {
+            sessionInfoFields.push(`${'<br>'}
+            ${tab}${tab}${sessionInfoFieldsChildren.children[1].value}:{${'<br>'}
+            ${tab}${tab}${tab}selectChat: ${sessionInfoFieldsChildren.children[3].children[1].value},${'<br>'}
+            ${tab}${tab}${tab}calltype: ${sessionInfoFieldsChildren.children[3].children[4].value},${'<br>'}
+            ${tab}${tab}${tab}language: ${sessionInfoFieldsChildren.children[3].children[7].value}${'<br>'}
+            ${tab}}`)
+        }
+        if (sessionInfoFieldsChildren.children[3].children[10].style.display !== 'none') {
+            sessionInfoFields.push(`${'<br>'}
+            ${tab}${tab}${sessionInfoFieldsChildren.children[1].value}:{${'<br>'}
+            ${tab}${tab}${tab}selectChat: ${sessionInfoFieldsChildren.children[3].children[1].value},${'<br>'}
+            ${tab}${tab}${tab}calltype: ${sessionInfoFieldsChildren.children[3].children[4].value},${'<br>'}
+            ${tab}${tab}${tab}language: ${sessionInfoFieldsChildren.children[3].children[7].value}${'<br>'}
+            ${tab}${tab}${tab}fields: [${fieldsSessionInfo(sessionInfoFieldsChildren.children[3].children[10].children[0].children)}]${'<br>'}
+            ${tab}}`)
+        }
+    }
+
+    function fieldsSessionInfo(children) {
+        let fieldsSessionInfos = [];
+        while (fieldsSessionInfos.length < children.length) {
+            fieldsSessionInfos.push(`{${'<br>'}
+            ${tab}${tab}${tab}${tab}${children[fieldsSessionInfos.length || 0].children[1].value}${'<br>'}
+            ${tab}${tab}${tab}}`)
+        }
+        return fieldsSessionInfos;
+    }
     function enableItem(item) {
         let definedItem
         for (i = 0; i < item.length; i++) {
             if (item[i].checked) {
                 definedItem = `<span class="true">${item[i].value}</span>`;
             }
+        }
+        if (definedItem === undefined) {
+            definedItem = false;
         }
         return definedItem;
     }
@@ -178,11 +213,13 @@ function generatorFile() {
         ${tab}},${'<br>'}
         ${tab}COMBOBOX_EMAIL_SUBJECT:[${emailTopic}],${'<br>'}
         ${tab}ANIMATIONS: {${'<br>'}
-        ${tab}${tab}ENABLE: ,${'<br>'}
+        ${tab}${tab}ENABLE: ${enableItem(animationRadio)},${'<br>'}
         ${tab}${tab}TYPE: '${animationType.value}',${'<br>'}
         ${tab}${tab}DURATION: '${animationDuration.value}',${'<br>'}
         ${tab}${tab}DIRECTION: '${animationDirection.value}',${'<br>'}
-        ${tab}},${'<br>'}
+        ${tab}}, { ${'<br>'}
+        ${tab}sessionsInfo: {${sessionInfoFields}
+        ${tab}${'<br>'}
         }`;
 }
 generatorBtn.addEventListener('click', generatorFile);
@@ -190,11 +227,11 @@ generatorBtn.addEventListener('click', generatorFile);
 const enableBtn = document.getElementById('enableBtn');
 const contactMediaText = document.getElementById('contactMediaText');
 function isChecked() {
-    if(enableBtn.checked) {
+    if (enableBtn.checked) {
         contactMediaText.classList.remove("disable");
         contactMediaText.textContent = 'Enable';
         enableBtn.value = 'true';
-        
+
     }
     else {
         contactMediaText.classList.add("disable");
