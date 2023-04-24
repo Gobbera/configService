@@ -45,8 +45,6 @@ function generatorFile() {
     let operatorRadio = document.getElementsByName('operator');
     let customerRadio = document.getElementsByName('customer');
     let logoRadio = document.getElementsByName('logo');
-    let animationRadio = document.getElementsByName('animationRadio');
-
     
     let contactMedias = document.getElementById('contactMedias');
     let skypeEnable = document.getElementById('skypeEnable');
@@ -220,8 +218,6 @@ function generatorFile() {
 }
 generatorBtn.addEventListener('click', generatorFile);
 
-
-let contactMediaText = document.getElementById('contactMediaText');
 
 function isChecked(item) {
     if(item.checked) {
