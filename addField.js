@@ -1,8 +1,10 @@
 const comboboxEmailContainer = document.getElementById('combobox-email-container');
 const sessionInfoContainer = document.getElementById('session-info-container');
+const rating = document.getElementById('rating-container');
 let id = 0;
 let sessionId = 0;
 let newSessionFieldId = 0;
+let ratingId = 0;
 let newField = `<div class="subject-field" id="fieldContainer${id}">
 <label for="">Assunto</label>
 <input type="text" id="subject" name="">
@@ -15,9 +17,11 @@ let newSessionFields = `<div id="fieldContainer${sessionId}">
 </div>`;
 let addFieldBtn = document.getElementById('addFieldBtn');
 let addSessionFields = document.getElementById('addSessionFields');
+let addRatingFields = document.getElementById('addRatingFields');
 let fieldContainer = '';
 addFieldBtn.addEventListener('click', addNewField);
 addSessionFields.addEventListener('click', addNewSessionFields);
+addRatingFields.addEventListener('click', addNewRatingFields);
 
 function addNewField() {
     id += 1;
@@ -113,4 +117,53 @@ function enableField() {
         return;
     }
     fieldId.style.display = 'none'
+}
+
+function addNewRatingFields() {
+    ratingId += 1;
+    let ratingField = `<div id="rating-field${ratingId}" onchange="toggleDivVisibility()">
+    ${tab}${tab}<label for="">Rating Field</label>
+    <select name="ratingFirstMessage" id="ratingFirstMessage">
+                    <option value="ratingFirstMessage">likeField</option>
+                    <option value="serviceSatisfaction">serviceSatisfaction</option>
+                    <option value="serviceSatisfactionStars">serviceSatisfactionStars</option>
+                    <option value="opinionField">opinionField</option>
+                    <option value="printChat">printChat</option>
+                    <option value="printPDFChat">printPDFChat</option>
+                </select>
+    <button onclick="removeNewRatingFields()" id="removeNewRatingFields${ratingId}" class="plusBtn">-</button> <br>
+    <div style="display:none;">
+    ${tab}${tab}<label for="">Number of stars</label>
+    <select name="" id="ratingStarsNumber">
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+    </div>
+    </div>`;
+    rating.insertAdjacentHTML('beforeend', ratingField);
+}
+
+function toggleDivVisibility() {
+    const me = this;
+    var selectBox = me.document.activeElement;
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    var ratingStarsDiv = selectBox.parentElement.lastElementChild;
+
+    if (selectBox.id === "ratingStarsNumber") {
+        return;
+    }
+    if (selectedValue === "serviceSatisfactionStars") {
+        ratingStarsDiv.style.display = "block";
+    } else {
+        ratingStarsDiv.style.display = "none";
+    }
+}
+
+function removeNewRatingFields() {
+    const me = this;
+    ratingField = document.getElementById(`rating-field${me.document.activeElement.id.substring(21)}`);
+    rating.removeChild(ratingField);
 }

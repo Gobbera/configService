@@ -30,6 +30,7 @@ const animationDirection = document.getElementById('direction');
 const generatorBtn = document.getElementById('generatorBtn');
 
 const tab = '&nbsp;&nbsp;&nbsp;&nbsp;';
+const comma = ',';
 
 let definedLayout;
 let definedBallon;
@@ -105,6 +106,29 @@ function generatorFile() {
         }
         return fieldsSessionInfos;
     }
+
+    let ratingContainer = document.getElementById('rating-container');
+    let ratingLength = ratingContainer.children.length;
+    let ratingFields = [];
+    while (ratingFields.length < ratingLength) {
+        if (ratingContainer.children[ratingFields.length || 0].children[4].style.display === "none") {
+            ratingFields.push(` {${'<br>'}
+            ${tab}${tab}${tab}surveyField: '${ratingContainer.children[emailTopic.length || 0].children[1].value}'${'<br>'}
+            ${tab}${tab}}`);
+        }
+        if (ratingContainer.children[ratingFields.length || 0]) {
+            if (ratingContainer.children[ratingFields.length || 0].children[4].style.display !== "none") {
+                ratingFields.push(` {${'<br>'}
+                ${tab}${tab}${tab}surveyField: '${ratingContainer.children[emailTopic.length || 0].children[1].value}',${'<br>'}
+                ${tab}${tab}${tab}inputs: '${ratingContainer.children[emailTopic.length || 0].children[4].children[1].value}'${'<br>'}
+                ${tab}${tab}}`);
+            }
+        }
+    }
+    if (ratingFields.length === 0) {
+        comma = '';
+    }
+
     function enableItem(item) {
         let definedItem;
         for (i = 0; i < item.length; i++) {
@@ -240,6 +264,12 @@ function generatorFile() {
         ${tab}${tab}email: ${blankFieldEmail.value}${'<br>'}
         ${tab}${tab}cpf: ${blankFieldCpf.value}${'<br>'}
         ${tab}},${'<br>'}
+        ${tab}rating: {${'<br>'}
+        ${tab}${tab}ratingFields: [{${'<br>'}
+        ${tab}${tab}${tab}surveyField: 'firstMessageField'${'<br>'}
+        ${tab}${tab}},${ratingFields}${comma} {${'<br>'}
+        ${tab}${tab}${tab}surveyField: 'lastMessageField'${'<br>'}
+        ${tab}${tab}}${'<br>'}
         }`;
 }
 generatorBtn.addEventListener('click', generatorFile);
