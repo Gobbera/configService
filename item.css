@@ -32,17 +32,17 @@
     background-color: rgb(243, 243, 243);
 }
 
-#generatorBtn {
+.buttons {
     background-color: rgb(30, 215, 98);
     border: none;
     height: 32px;
     color: white;
     border-radius: 2px;
+    cursor: pointer;
 }
 
-#generatorBtn:hover {
+.buttons:hover {
     background-color: rgb(60, 245, 128);
-    cursor: pointer;
 }
 
 .subject-field {
@@ -104,10 +104,22 @@ input:checked+.enableBtn::before {
 #defaultFieldsEnableNAME,
 #defaultFieldsEnablePHONE,
 #defaultFieldsEnableCPF,
-#defaultFieldsEnableEMAIL {
+#defaultFieldsEnableEMAIL,
+#topBarEnable,
+#operatorEnable,
+#customerEnable,
+#logoEnable {
     display: none;
+
 }
 
 .enableContainer {
     display: flex;
+}
+
+.userImg {
+    background-color: green;
+    width: 64px; 
+    height: 64px;
+    border-radius: 50%;
 }

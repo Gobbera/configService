@@ -110,67 +110,81 @@
                 </div>
             </div>
             <h2 class="section-title">Top Bar</h2>
-            <div class="section select-config">
+            <div style="display: grid;">
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="topBarEnable">Enable</label>
-                    <input type="radio" name="topBar" id="topBarEnable" value="true">
+                    <label class="enable" id="topBarEnableText">Enable</label><br>
+                </div>
+                <input type="checkbox" id="topBarEnable" checked onclick="changeStatus(topBarEnableText, topBarEnable);"
+                    value="true">
+                <label for="topBarEnable" class="enableBtn"></label>
+                <div>
+                    <img id="topBarEnableImg" src="" alt="" style="background-color: green;" width="245px" height="160px">
                 </div>
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="topBarDisable">Disable</label>
-                    <input type="radio" name="topBar" id="topBarDisable" value="false">
+                    <img id="topBarDisableImg" src="" alt="" style="background-color: red;" width="245px" height="160px">
                 </div>
             </div>
             <h2 class="section-title">Operator</h2>
-            <div class="section">
+            <div style="display: grid;">
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="operatorEnable">Enable</label>
-                    <input type="radio" name="operator" id="operatorEnable" value="true">
+                    <label class="enable" id="operatorEnableText">Enable</label>
+                </div>
+                <input type="checkbox" id="operatorEnable" checked onclick="changeStatus(operatorEnableText, operatorEnable);"
+                    value="true">
+                <label for="operatorEnable" class="enableBtn"></label>
+                <div>
+                    <img id="operatorEnableImgIcon" src="/images/operator/atena.png" style="border-radius: 50%;
+                    position: absolute; margin: 15px 10px 10px 10px;" width="48px" height="48px">
+                    <img id="operatorEnableImg" src="images/operator/operatorOn.png" alt="operatorOn.png" width="300px" height="150px">
                 </div>
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="operatorDisable">Disable</label>
-                    <input type="radio" name="operator" id="operatorDisable" value="false">
+                    <img id="operatorDisableImg" src="images/operator/operatorOff.png" alt="operatorOff.png" width="300px" height="150px">
                 </div>
-                <div>
+                <div id="insertOperatorUrl">
                     <label for="">URL da Imagem</label>
-                    <input class="input-text" type="text" id="operatorImg" name=""><br>
+                    <input class="input-text" type="text" id="operatorImg">
+                    <input type="button" class="buttons" value="Enviar" onclick="sendImageToIcon(operatorEnableImgIcon, operatorImg);">
                 </div>
             </div>
             <h2 class="section-title">Customer</h2>
-            <div class="section">
+            <div style="display: grid;">
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="customerEnable">Enable</label>
-                    <input type="radio" name="customer" id="customerEnable" value="true">
+                    <label class="enable" id="customerEnableText">Enable</label>
+                </div>
+                <input type="checkbox" id="customerEnable" checked onclick="changeStatus(customerEnableText, customerEnable);"
+                    value="true">
+                <label for="customerEnable" class="enableBtn"></label>
+                <div>
+                    <img id="customerEnableImgIcon" src="images/customer/default.png" style="border-radius: 50%;
+                    position: absolute; margin: 16px 10px 10px 232px;" width="48px" height="48px">
+                    <img id="customerEnableImg" src="/images/customer/customerOn.png" alt="customerOn.png" width="300px" height="150px">
                 </div>
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="customerDisable">Disable</label>
-                    <input type="radio" name="customer" id="customerDisable" value="false">
+                    <img id="customerDisableImg" src="/images/customer/customerOff.png" alt="customerOff.png" width="300px" height="150px">
                 </div>
-                <div>
+                <div id="insertCustomerUrl">
                     <label for="">URL da Imagem</label>
-                    <input class="input-text" type="text" id="customerImg" name=""><br>
+                    <input class="input-text" type="text" id="customerImg">
+                    <input type="button" class="buttons" value="Enviar" onclick="sendImageToIcon(customerEnableImgIcon, customerImg);">
                 </div>
             </div>
             <h2 class="section-title">Logo</h2>
-            <div class="section">
+            <div style="display: grid;">
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="logoEnable">Enable</label>
-                    <input type="radio" name="logo" id="logoEnable" value="true">
+                    <label class="enable" id="logoEnableText">Enable</label>
                 </div>
+                <input type="checkbox" id="logoEnable" checked onclick="changeStatus(logoEnableText, logoEnable);"
+                    value="true">
+                <label for="logoEnable" class="enableBtn"></label>
                 <div>
-                    <img src="" alt="" width="245px" height="160px"><br>
-                    <label for="logoDisable">Disable</label>
-                    <input type="radio" name="logo" id="logoDisable" value="false">
+                    <img id="logoEnableImgIcon" src="images/screens/logo.png" style="position: absolute;
+                     margin: 36px 10px 10px 100px;" style="background-color: aqua;" width="210px" height="66px">
+                    <img id="logoEnableImg" src="images/screens/newChatSession.png" alt="newChatSession.png" width="433px" height="705px">
                 </div>
-                <div>
+                <div id="insertLogoUrl">
                     <label for="">URL da Imagem</label>
-                    <input class="input-text" type="text" id="logoImg" name=""><br>
+                    <input class="input-text" type="text" id="logoImg">
+                    <input type="button" class="buttons" value="Enviar" onclick="sendImageToIcon(logoEnableImgIcon, logoImg);">
                 </div>
             </div>
             <h2 class="section-title">Background Images</h2>
@@ -402,7 +416,7 @@
         </div>
     </div>
     <div class="generatorBtn">
-        <input type="button" id="generatorBtn" value="Gerar Arquivo">
+        <input type="button" class="buttons" id="generatorBtn" value="Gerar Arquivo">
     </div>
     <div style="background-color: rgb(45,43, 85);border: 16px solid rgb(40,40,78);">
         <p class="output" id="output"></p>

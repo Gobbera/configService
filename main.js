@@ -24,7 +24,20 @@ const email = document.getElementById('email');
 const animationType = document.getElementById('type');
 const animationDuration = document.getElementById('duration');
 const animationDirection = document.getElementById('direction');
+const topBarEnableImg = document.getElementById('topBarEnableImg');
+const topBarDisableImg = document.getElementById('topBarDisableImg');
+const operatorEnableImg = document.getElementById('operatorEnableImg');
+const operatorDisableImg = document.getElementById('operatorDisableImg');
+const customerEnableImg = document.getElementById('customerEnableImg');
+const customerDisableImg = document.getElementById('customerDisableImg');
+const logoEnableImg = document.getElementById('logoEnableImg');
+const logoDisableImg = document.getElementById('logoDisableImg');
+const operatorEnableImgIcon = document.getElementById('operatorEnableImgIcon');
 
+topBarDisableImg.hidden = true;
+operatorDisableImg.hidden = true;
+customerDisableImg.hidden = true;
+logoDisableImg.hidden = true;
 
 
 const generatorBtn = document.getElementById('generatorBtn');
@@ -42,10 +55,6 @@ let definedLogo;
 function generatorFile() {
     let layoutRadio = document.getElementsByName('layout');
     let ballonRadio = document.getElementsByName('model');
-    let topBarRadio = document.getElementsByName('topBar');
-    let operatorRadio = document.getElementsByName('operator');
-    let customerRadio = document.getElementsByName('customer');
-    let logoRadio = document.getElementsByName('logo');
 
     let contactMedias = document.getElementById('contactMedias');
     let skypeEnable = document.getElementById('skypeEnable');
@@ -153,18 +162,18 @@ function generatorFile() {
         ${tab}LAYOUT: '${enableItem(layoutRadio)}',${'<br>'}
         ${tab}BALLON_MESSAGE: '${enableItem(ballonRadio)}',${'<br>'}
         ${tab}CHAT: {${'<br>'}
-        ${tab}${tab}TOP_BAR_ENABLE: ${enableItem(topBarRadio)},${'<br>'}
+        ${tab}${tab}TOP_BAR_ENABLE: ${isChecked(topBarEnable)},${'<br>'}
         ${tab}${tab}OPERATOR: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ${enableItem(operatorRadio)},${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${isChecked(operatorEnable)},${'<br>'}
         ${tab}${tab}${tab}IMAGE: '${operatorImg.value}',${'<br>'}
-        ${tab}},${'<br>'}
+        ${tab}${tab}},${'<br>'}
         ${tab}${tab}CUSTOMER: {${'<br>'}
-        ${tab}${tab}${tab}ENABLE: ${enableItem(customerRadio)},${'<br>'}
+        ${tab}${tab}${tab}ENABLE: ${isChecked(customerEnable)},${'<br>'}
         ${tab}${tab}${tab}IMAGE: '${customerImg.value}',${'<br>'}
         ${tab}${tab}}${'<br>'}
         ${tab}}${'<br>'}
         ${tab}LOGO: {${'<br>'}
-        ${tab}${tab}ENABLE: ${enableItem(logoRadio)},${'<br>'}
+        ${tab}${tab}ENABLE: ${isChecked(logoEnable)},${'<br>'}
         ${tab}${tab}IMAGE: '${logoImg.value}',${'<br>'}
         ${tab}},${'<br>'}
         ${tab}BACKGROUND_IMAGE: {${'<br>'}
@@ -286,6 +295,42 @@ function isChecked(item) {
 }
 
 function changeStatus(id, item) {
+    if (item == topBarEnable) {
+        changeElement(topBarEnableImg, topBarDisableImg);
+    }
+    if (item == operatorEnable) {
+        if (operatorEnableImgIcon.hidden == true) {
+            operatorEnableImgIcon.hidden = false;
+            insertOperatorUrl.hidden = false;
+        }
+        else {
+            insertOperatorUrl.hidden = true;
+            operatorEnableImgIcon.hidden = true;
+        }
+        changeElement(operatorEnableImg, operatorDisableImg);
+    }
+    if (item == customerEnable) {
+        if (customerEnableImgIcon.hidden == true) {
+            customerEnableImgIcon.hidden = false;
+            insertCustomerUrl.hidden = false;
+        }
+        else {
+            insertCustomerUrl.hidden = true;
+            customerEnableImgIcon.hidden = true;
+        }
+        changeElement(customerEnableImg, customerDisableImg);
+    }
+    if (item == logoEnable) {
+        if (logoEnableImgIcon.hidden == true) {
+            logoEnableImgIcon.hidden = false;
+            insertLogoUrl.hidden = false;
+        }
+        else {
+            insertLogoUrl.hidden = true;
+            logoEnableImgIcon.hidden = true;
+        }
+        changeElement(logoEnableImg, logoDisableImg);
+    }
     if (item.checked) {
         id.classList.remove("disable");
         id.textContent = 'Enable';
@@ -294,5 +339,19 @@ function changeStatus(id, item) {
         id.classList.add("disable");
         id.textContent = "Disable";
     }
+}
 
+function changeElement (imgEnable, imgDisable) {
+    if (imgDisable.hidden == true) {
+        imgDisable.hidden = false;
+        imgEnable.hidden = true;  
+    }
+    else {
+        imgDisable.hidden = true;
+        imgEnable.hidden = false;  
+    }
+}
+
+function sendImageToIcon (element, valueOfInput) {
+    element.setAttribute('src', valueOfInput.value);
 }
