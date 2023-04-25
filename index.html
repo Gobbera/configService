@@ -191,31 +191,31 @@
             <div>
                 <div class="input-general-configs">
                     <label>NEW_CHAT_SESSION</label><br>
-                    <input class="input-text" type="text" id="ncsBackground" name=""><br>
+                    <input class="input-text" type="text" id="ncsBackground"><br>
                 </div>
                 <div class="input-general-configs">
                     <label for="">CHAT</label><br>
-                    <input class="input-text" type="text" id="chatBackground" name=""><br>
+                    <input class="input-text" type="text" id="chatBackground"><br>
                 </div>
                 <div class="input-general-configs">
                     <label for="">CALL_ENDED</label><br>
-                    <input class="input-text" type="text" id="callEndedBackground" name=""><br>
+                    <input class="input-text" type="text" id="callEndedBackground"><br>
                 </div>
                 <div class="input-general-configs">
                     <label for="">NO_ATTENDANT</label><br>
-                    <input class="input-text" type="text" id="noAttendantBackground" name=""><br>
+                    <input class="input-text" type="text" id="noAttendantBackground"><br>
                 </div>
                 <div class="input-general-configs">
                     <label for="">NOT_FOUND</label><br>
-                    <input class="input-text" type="text" id="notFoundBackground" name=""><br>
+                    <input class="input-text" type="text" id="notFoundBackground"><br>
                 </div>
                 <div class="input-general-configs">
                     <label for="">RECONNECT</label><br>
-                    <input class="input-text" type="text" id="reconnectBackground" name=""><br>
+                    <input class="input-text" type="text" id="reconnectBackground"><br>
                 </div>
                 <div class="input-general-configs">
                     <label for="">QUEUE</label><br>
-                    <input class="input-text" type="text" id="queueBackground" name=""><br>
+                    <input class="input-text" type="text" id="queueBackground"><br>
                 </div>
             </div>
             <h2 class="section-title">Icons</h2>
@@ -223,7 +223,10 @@
                 <h1>vou fazer essa parte depois</h1>
             </div>
             <h2 class="section-title">Contact Medias</h2>
-            <h3 class="sub-section">Current Chat</h3>
+            <div style="display: flex;">
+                <img src="images/mediaContacts/chat_xgen.png" style="align-self: center; margin: 4px;" alt="skype.png" width="36px" height="36px">
+                <h3>Current Chat</h3>
+            </div>
             <div class="section">
                 <div>
                     <label class="enable" id="contactMediaText">Enable</label><br>
@@ -233,49 +236,61 @@
                 <label for="contactMedias" class="enableBtn"></label>
                 <div>
                     <label for="">Image Link</label>
-                    <input class="input-text" type="text" id="currentChat" name=""><br>
+                    <input class="input-text" type="text" id="currentChat"><br>
                 </div>
             </div>
-            <h3 class="sub-section">Skype</h3>
+            <div style="display: flex;">
+                <img src="images/mediaContacts/skype.png" style="align-self: center; margin: 4px;" alt="skype.png" width="36px" height="36px">
+                <h3>Skype</h3>
+            </div>
             <div class="section">
                 <div>
                     <label class="enable" id="skypeEnableText">Enable</label><br>
                 </div>
                 <input type="checkbox" id="skypeEnable" checked onclick="changeStatus(skypeEnableText, skypeEnable);"
-                    value="true">
+                value="true">
                 <label for="skypeEnable" class="enableBtn"></label>
                 <div>
                     <label for="">Link</label>
                     <input class="input-text" type="text" id="skype" name=""><br>
                 </div>
             </div>
-            <h3 class="sub-section">Messenger</h3>
+            <div style="display: flex;">
+                <img src="images/mediaContacts/messengertexto.png" style="align-self: center; margin: 4px;" alt="skype.png" width="36px" height="36px">
+                <h3>Messenger</h3>
+            </div>
             <div class="section">
                 <div>
                     <label class="enable" id="messengerEnableText">Enable</label><br>
                 </div>
                 <input type="checkbox" id="messengerEnable" checked
-                    onclick="changeStatus(messengerEnableText, messengerEnable);" value="true">
+                onclick="changeStatus(messengerEnableText, messengerEnable);" value="true">
                 <label for="messengerEnable" class="enableBtn"></label>
                 <div>
                     <label for="">Link</label>
                     <input class="input-text" type="text" id="messenger" name=""><br>
                 </div>
             </div>
-            <h3 class="sub-section">Telegram</h3>
+            <div style="display: flex;">
+                <img src="images/mediaContacts/telegram.png" style="align-self: center; margin: 4px;" alt="skype.png" width="36px" height="36px">
+                <h3>Telegram</h3>
+            </div>
             <div class="section">
                 <div>
                     <label class="enable" id="telegramEnableText">Enable</label><br>
                 </div>
                 <input type="checkbox" id="telegramEnable" checked
-                    onclick="changeStatus(telegramEnableText, telegramEnable);" value="true">
+                onclick="changeStatus(telegramEnableText, telegramEnable);" value="true">
                 <label for="telegramEnable" class="enableBtn"></label>
                 <div>
                     <label for="">Link</label>
                     <input class="input-text" type="text" id="telegram" name=""><br>
                 </div>
             </div>
-            <h3 class="sub-section">WhatsApp</h3>
+            <div style="display: flex;">
+                <img src="images/mediaContacts/whatsapptexto.png" style="align-self: center; margin: 4px;" alt="skype.png" width="36px" height="36px">
+                <h3>WhatsApp</h3>
+            </div>
             <div class="section">
                 <div>
                     <label class="enable" id="whatsappEnableText">Enable</label><br>
@@ -288,7 +303,10 @@
                     <input class="input-text" type="text" id="whatsapp" name=""><br>
                 </div>
             </div>
-            <h3 class="sub-section">Apple Business</h3>
+            <div style="display: flex;">
+                <img src="images/mediaContacts/apple_business_chat.png" style="align-self: center; margin: 4px;" alt="skype.png" width="36px" height="36px">
+                <h3>Apple Business</h3>
+            </div>
             <div class="section">
                 <div>
                     <label class="enable" id="appleBusinessEnableText">Enable</label><br>
@@ -301,7 +319,10 @@
                     <input class="input-text" type="text" id="appleBusiness" name=""><br>
                 </div>
             </div>
-            <h3 class="sub-section">Email</h3>
+            <div style="display: flex;">
+                <img src="images/mediaContacts/mail.png" style="align-self: center; margin: 4px;" alt="skype.png" width="36px" height="36px">
+                <h3>Email</h3>
+            </div>
             <div class="section">
                 <div>
                     <label class="enable" id="emailEnableText">Enable</label><br>
