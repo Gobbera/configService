@@ -31,19 +31,17 @@ const operatorDisableImg = document.getElementById('operatorDisableImg');
 const customerEnableImg = document.getElementById('customerEnableImg');
 const customerDisableImg = document.getElementById('customerDisableImg');
 const logoEnableImg = document.getElementById('logoEnableImg');
-const logoDisableImg = document.getElementById('logoDisableImg');
 const operatorEnableImgIcon = document.getElementById('operatorEnableImgIcon');
 
 topBarDisableImg.hidden = true;
 operatorDisableImg.hidden = true;
 customerDisableImg.hidden = true;
-logoDisableImg.hidden = true;
 
 
 const generatorBtn = document.getElementById('generatorBtn');
 
 const tab = '&nbsp;&nbsp;&nbsp;&nbsp;';
-const comma = ',';
+let comma = ',';
 
 let definedLayout;
 let definedBallon;
@@ -341,17 +339,17 @@ function changeStatus(id, item) {
     }
 }
 
-function changeElement (imgEnable, imgDisable) {
+function changeElement(imgEnable, imgDisable) {
     if (imgDisable.hidden == true) {
         imgDisable.hidden = false;
-        imgEnable.hidden = true;  
+        imgEnable.hidden = true;
     }
     else {
         imgDisable.hidden = true;
-        imgEnable.hidden = false;  
+        imgEnable.hidden = false;
     }
 }
 
-function sendImageToIcon (element, valueOfInput) {
+function sendImageToIcon(element, valueOfInput) {
     element.setAttribute('src', valueOfInput.value);
 }

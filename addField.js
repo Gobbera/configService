@@ -148,9 +148,9 @@ function addNewRatingFields() {
 
 function toggleDivVisibility() {
     const me = this;
-    var selectBox = me.document.activeElement;
-    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    var ratingStarsDiv = selectBox.parentElement.lastElementChild;
+    let selectBox = me.document.activeElement;
+    let selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    let ratingStarsDiv = selectBox.parentElement.lastElementChild;
 
     if (selectBox.id === "ratingStarsNumber") {
         return;
