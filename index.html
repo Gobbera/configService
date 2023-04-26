@@ -123,9 +123,20 @@
                         <div class="text-message">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         </div>
-                        <div class="date-message">
-                            <p>12/03/2002</p>
+                        <div class="date-message" id="dateMessage">
                         </div>
+                        <script>
+                            const options = {
+                                year: 'numeric',
+                                month: 'numeric',
+                                day: 'numeric',
+                                hour: 'numeric',
+                                minute: 'numeric'
+                            };
+                            const date = new Date().toLocaleString('pt-BR', options);
+                            const dateElement = document.querySelector('#dateMessage');
+                            dateElement.textContent = date;
+                        </script>
                     </div>
                 </div>
             </div>
