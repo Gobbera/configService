@@ -35,7 +35,6 @@ const operatorEnableImgIcon = document.getElementById('operatorEnableImgIcon');
 const copyButton = document.getElementById('copyButton');
 const download = document.getElementById('download');
 
-copyButton.addEventListener('click', copyConfig);
 
 topBarDisableImg.hidden = true;
 operatorDisableImg.hidden = true;
@@ -279,8 +278,6 @@ function generatorFile() {
     copyButton.hidden = false;
     download.hidden = false;
 }
-generatorBtn.addEventListener('click', generatorFile);
-
 
 function isChecked(item) {
     return `<span class="true">${item.checked ? 'true' : 'false'}</span>`;
@@ -335,7 +332,6 @@ function copyConfig() {
     document.body.removeChild(temporaryElement);
 }
 
-download.addEventListener("click", downloadFile);
 function downloadFile() {
     const userString = output.textContent;
     const downloadLink = document.createElement("a");
@@ -346,3 +342,7 @@ function downloadFile() {
     downloadLink.click();
     document.body.removeChild(downloadLink);
 }
+
+copyButton.addEventListener('click', copyConfig);
+generatorBtn.addEventListener('click', generatorFile);
+download.addEventListener("click", downloadFile);
