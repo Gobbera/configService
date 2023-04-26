@@ -35,6 +35,8 @@ const operatorEnableImgIcon = document.getElementById('operatorEnableImgIcon');
 const copyButton = document.getElementById('copyButton');
 const download = document.getElementById('download');
 
+copyButton.addEventListener('click', copyConfig);
+
 topBarDisableImg.hidden = true;
 operatorDisableImg.hidden = true;
 customerDisableImg.hidden = true;
@@ -328,3 +330,14 @@ function sendImageToIcon(element, valueOfInput) {
     element.setAttribute('src', valueOfInput.value);
 }
 
+function copyConfig() {
+    const text = output.textContent;
+
+    const temporaryElement = document.createElement('textarea');
+    temporaryElement.value = text;
+
+    document.body.appendChild(temporaryElement);
+    temporaryElement.select();
+    document.execCommand('copy');
+    document.body.removeChild(temporaryElement);
+}
