@@ -32,13 +32,13 @@ const customerEnableImg = document.getElementById('customerEnableImg');
 const customerDisableImg = document.getElementById('customerDisableImg');
 const logoEnableImg = document.getElementById('logoEnableImg');
 const operatorEnableImgIcon = document.getElementById('operatorEnableImgIcon');
-const copy = document.getElementById('copy');
+const copyButton = document.getElementById('copyButton');
 const download = document.getElementById('download');
 
 topBarDisableImg.hidden = true;
 operatorDisableImg.hidden = true;
 customerDisableImg.hidden = true;
-copy.hidden = true;
+copyButton.hidden = true;
 download.hidden = true;
 
 
@@ -275,80 +275,56 @@ function generatorFile() {
         ${tab}}${'<br>'}
         }`;
 
-    copy.hidden = false;
+    copyButton.hidden = false;
     download.hidden = false;
 }
 generatorBtn.addEventListener('click', generatorFile);
 
 
 function isChecked(item) {
-    if (item.checked) {
-        item.value = 'true';
-    }
-    else {
-        item.value = 'false';
-    }
-    return `<span class="true">${item.value}</span>`;
+    return `<span class="true">${item.checked ? 'true' : 'false'}</span>`;
 }
 
 function changeStatus(id, item) {
-    if (item == topBarEnable) {
-        changeElement(topBarEnableImg, topBarDisableImg);
-    }
-    if (item == operatorEnable) {
-        if (operatorEnableImgIcon.hidden == true) {
-            operatorEnableImgIcon.hidden = false;
-            insertOperatorUrl.hidden = false;
-        }
-        else {
-            insertOperatorUrl.hidden = true;
-            operatorEnableImgIcon.hidden = true;
-        }
-        changeElement(operatorEnableImg, operatorDisableImg);
-    }
-    if (item == customerEnable) {
-        if (customerEnableImgIcon.hidden == true) {
-            customerEnableImgIcon.hidden = false;
-            insertCustomerUrl.hidden = false;
-        }
-        else {
-            insertCustomerUrl.hidden = true;
-            customerEnableImgIcon.hidden = true;
-        }
-        changeElement(customerEnableImg, customerDisableImg);
-    }
-    if (item == logoEnable) {
-        if (logoEnableImgIcon.hidden == true) {
-            logoEnableImgIcon.hidden = false;
-            insertLogoUrl.hidden = false;
-        }
-        else {
-            insertLogoUrl.hidden = true;
-            logoEnableImgIcon.hidden = true;
-        }
-        changeElement(logoEnableImg, logoDisableImg);
+    //<debug>
+    debugger;
+    //</debug>
+
+    switch (item) {
+        case topBarEnable:
+            changeElement(topBarEnableImg, topBarDisableImg);
+            break;
+        case operatorEnable:
+            operatorEnableImgIcon.hidden = !operatorEnableImgIcon.hidden
+            insertOperatorUrl.hidden = !insertOperatorUrl.hidden;
+            changeElement(operatorEnableImg, operatorDisableImg);
+            break;
+        case customerEnable:
+            customerEnableImgIcon.hidden = !customerEnableImgIcon.hidden;
+            insertCustomerUrl.hidden = !insertCustomerUrl.hidden;
+            changeElement(customerEnableImg, customerDisableImg);
+            break;
+        case logoEnable:
+            logoEnableImgIcon.hidden = !logoEnableImgIcon.hidden;
+            insertLogoUrl.hidden = !insertLogoUrl.hidden;
+            changeElement(logoEnableImg);
+            break;
     }
     if (item.checked) {
         id.classList.remove("disable");
         id.textContent = 'Enable';
+        return;
     }
-    else {
-        id.classList.add("disable");
-        id.textContent = "Disable";
-    }
+    id.classList.add("disable");
+    id.textContent = "Disable";
 }
 
 function changeElement(imgEnable, imgDisable) {
-    if (imgDisable.hidden == true) {
-        imgDisable.hidden = false;
-        imgEnable.hidden = true;
-    }
-    else {
-        imgDisable.hidden = true;
-        imgEnable.hidden = false;
-    }
+    imgDisable.hidden = !imgDisable.hidden;
+    imgEnable.hidden = !imgEnable.hidden;
 }
 
 function sendImageToIcon(element, valueOfInput) {
     element.setAttribute('src', valueOfInput.value);
 }
+
