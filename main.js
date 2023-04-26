@@ -43,7 +43,6 @@ customerDisableImg.hidden = true;
 copyButton.hidden = true;
 download.hidden = true;
 
-
 const generatorBtn = document.getElementById('generatorBtn');
 
 const tab = '&nbsp;&nbsp;&nbsp;&nbsp;';
@@ -288,10 +287,6 @@ function isChecked(item) {
 }
 
 function changeStatus(id, item) {
-    //<debug>
-    debugger;
-    //</debug>
-
     switch (item) {
         case topBarEnable:
             changeElement(topBarEnableImg, topBarDisableImg);
@@ -309,7 +304,7 @@ function changeStatus(id, item) {
         case logoEnable:
             logoEnableImgIcon.hidden = !logoEnableImgIcon.hidden;
             insertLogoUrl.hidden = !insertLogoUrl.hidden;
-            changeElement(logoEnableImg);
+            changeElement(logoEnableImg, logoEnableImg);
             break;
     }
     if (item.checked) {
@@ -332,12 +327,22 @@ function sendImageToIcon(element, valueOfInput) {
 
 function copyConfig() {
     const text = output.textContent;
-
     const temporaryElement = document.createElement('textarea');
     temporaryElement.value = text;
-
     document.body.appendChild(temporaryElement);
     temporaryElement.select();
     document.execCommand('copy');
     document.body.removeChild(temporaryElement);
+}
+
+download.addEventListener("click", downloadFile);
+function downloadFile() {
+    const userString = output.textContent;
+    const downloadLink = document.createElement("a");
+    const file = new Blob([userString], {type: "js"});
+    downloadLink.href = URL.createObjectURL(file);
+    downloadLink.download = "config.template.js";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
 }
