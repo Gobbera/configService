@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="item.css">
+    <link rel="stylesheet" href="template.css">
     <title>Config-Service</title>
 </head>
 
@@ -107,6 +108,25 @@
                     </label>
                     <label for="model4">modelo 4</label>
                     <input type="radio" name="model" id="model4" value="model4">
+                </div>
+            </div>
+            <div>
+                <h3>Selecione a Cor</h3>
+            </div>
+            <div>
+                <div class="text-detail"></div>
+                <div class="message-body">
+                    <div class="message-content">
+                        <div class="autor">
+                            autor
+                        </div>
+                        <div class="text-message">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="date-message">
+                            <p>12/03/2002</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <h2 class="section-title">Top Bar</h2>
@@ -458,8 +478,13 @@
         <input type="button" class="buttons" id="download" value="Download" style="margin: 0 10px;">
         <input type="button" class="buttons" id="generatorBtn" value="Gerar Arquivo" style="margin: 0 10px;">
     </div>
-    <div style="background-color: rgb(45,43, 85);border: 16px solid rgb(40,40,78);">
-        <p class="output" id="output"></p>
+    <div style="display: flex;">
+        <div style="background-color: rgb(45,43, 85);border: 16px solid rgb(40,40,78); width: 50vw;">
+            <p class="output" id="output"></p>
+        </div>
+        <div style="background-color: rgb(45,43, 85);border: 16px solid rgb(40,40,78); width: 50vw;">
+            <p class="output" id="outputCss"></p>
+        </div>
     </div>
     </div>
 </body>

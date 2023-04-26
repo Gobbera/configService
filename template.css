@@ -1,0 +1,43 @@
+p {
+    padding: 0;
+    margin: 0;
+}
+.text-detail {
+
+}
+
+.message-body {
+    display: flex;
+    
+}
+
+.message-content {
+    background-color: aqua;
+    width: 200px;
+    height: 100px;
+    border-radius: 5px;
+    margin: 10px 0px 10px 0px;
+    padding: 0px 25px 0px 25px;
+}
+
+.autor {
+    display: flex;
+    font-size: 14pt;
+    padding: 8px 0px 4px 0px;
+    font-weight: 600;
+    color: black;
+}
+
+.text-message {
+    font-size: 12pt;
+    display: flex;
+    font-weight: 500;
+    text-align: left;
+    word-break: break-all;
+}
+
+.date-message {
+    font-size: 10pt;
+    margin: 5px;
+    text-align: right;
+}
