@@ -32,10 +32,14 @@ const customerEnableImg = document.getElementById('customerEnableImg');
 const customerDisableImg = document.getElementById('customerDisableImg');
 const logoEnableImg = document.getElementById('logoEnableImg');
 const operatorEnableImgIcon = document.getElementById('operatorEnableImgIcon');
+const copy = document.getElementById('copy');
+const download = document.getElementById('download');
 
 topBarDisableImg.hidden = true;
 operatorDisableImg.hidden = true;
 customerDisableImg.hidden = true;
+copy.hidden = true;
+download.hidden = true;
 
 
 const generatorBtn = document.getElementById('generatorBtn');
@@ -278,6 +282,9 @@ function generatorFile() {
         ${tab}${tab}${tab}surveyField: 'lastMessageField'${'<br>'}
         ${tab}${tab}}${'<br>'}
         }`;
+
+copy.hidden = false;
+download.hidden = false;
 }
 generatorBtn.addEventListener('click', generatorFile);
 

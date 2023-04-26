@@ -66,7 +66,7 @@ function addNewSessionFields() {
             <button onclick="addNewChatField()" id="addNewChatField${sessionId}" class="plusBtn">+</button> <br>
         </div>
     </div>
-    <button onclick="removeSessionFields()" id="removeField${sessionId}" class="plusBtn">-</button>
+    <button onclick="removeSessionFields()" id="removeField${sessionId}" class="decreaseBtn">-</button>
     </div>`;
     sessionInfoContainer.insertAdjacentHTML('beforeend', newSessionFields);
 }
@@ -89,7 +89,7 @@ function addNewChatField() {
                                             <option value="CPF">CPF</option>
                                             <option value="email">email</option>
                                         </select>
-                            <button onclick="removeNewChatField()" id="addNewChatField${sessionId}" class="plusBtn">-</button> <br>
+                            <button onclick="removeNewChatField()" id="addNewChatField${sessionId}" class="decreaseBtn">-</button> <br>
                         </div>`;
     let newSessionFields = document.getElementById(`newSessionFields${sessionFieldId.substring(15)}`);
     newSessionFields.insertAdjacentHTML('beforeend', sessionField);
@@ -131,7 +131,7 @@ function addNewRatingFields() {
                     <option value="printChat">printChat</option>
                     <option value="printPDFChat">printPDFChat</option>
                 </select>
-    <button onclick="removeNewRatingFields()" id="removeNewRatingFields${ratingId}" class="plusBtn">-</button> <br>
+    <button onclick="removeNewRatingFields()" id="removeNewRatingFields${ratingId}" class="decreaseBtn">-</button> <br>
     <div style="display:none;">
     ${tab}${tab}<label for="">Number of stars</label>
     <select name="" id="ratingStarsNumber">
