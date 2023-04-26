@@ -141,16 +141,7 @@ function generatorFile() {
     }
 
     function enableItem(item) {
-        let definedItem;
-        for (i = 0; i < item.length; i++) {
-            if (item[i].checked) {
-                definedItem = `<span class="true">${item[i].value}</span>`;
-            }
-        }
-        if (definedItem === undefined) {
-            definedItem = false;
-        }
-        return definedItem;
+        return Array.from(item).find((element) => element.checked)?.value || 'false';
     }
     output.innerHTML =
         `window.CONFIG = {${'<br>'}
@@ -280,11 +271,12 @@ function generatorFile() {
         ${tab}${tab}${tab}surveyField: 'firstMessageField'${'<br>'}
         ${tab}${tab}},${ratingFields}${comma} {${'<br>'}
         ${tab}${tab}${tab}surveyField: 'lastMessageField'${'<br>'}
-        ${tab}${tab}}${'<br>'}
+        ${tab}${tab}}]${'<br>'}
+        ${tab}}${'<br>'}
         }`;
 
-copy.hidden = false;
-download.hidden = false;
+    copy.hidden = false;
+    download.hidden = false;
 }
 generatorBtn.addEventListener('click', generatorFile);
 

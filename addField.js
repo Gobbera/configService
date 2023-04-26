@@ -56,9 +56,9 @@ function addNewSessionFields() {
         <div>
             ${tab}${tab}<label for="fields">Fields</label> <br>
             ${tab}${tab}${tab}${tab}<label for="fieldsEnable">Enable</label>
-            <input onclick="enableField()" type="radio" name="fields${sessionId}" id="fieldsEnable" value=true> 
+            <input onclick="enableField()" type="radio" name="fields${sessionId}" id="fieldsEnable" value="true"> 
             ${tab}<label for="fieldsDisable">Disable</label>
-            <input onclick="enableField()" type="radio" name="fields${sessionId}" id="fieldsDisable" value=false>
+            <input onclick="enableField()" type="radio" name="fields${sessionId}" id="fieldsDisable" value="false">
         </div>
         <div style="display: none" id="newSessionFieldsContainer${sessionId}">
             <div id="newSessionFields${sessionId}">
@@ -106,12 +106,7 @@ function enableField() {
     const fieldName = me.document.activeElement.name;
     const fieldRadios = me.document.getElementsByName(fieldName);
     const fieldId = me.document.getElementById(`newSessionFieldsContainer${fieldName.substring(6)}`);
-    let definedItem
-    for (i = 0; i < fieldRadios.length; i++) {
-        if (fieldRadios[i].checked) {
-            definedItem = fieldRadios[i].value;
-        }
-    }
+    let definedItem = Array.from(fieldRadios).find((element) => element.checked).value;
     if (definedItem == 'true') {
         fieldId.style.display = 'block'
         return;
